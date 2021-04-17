@@ -1,0 +1,58 @@
+<div class="container card">
+    <h4 class="headings_txt">DocType Edit</h4>
+      <div class="content">
+        <form [formGroup]="doctypeEditForm" autocomplete="off">
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputEmail4">Document Name</label>
+                <input type="text" class="form-control" formControlName="Name" id="inputEmail4" placeholder="Document Name">
+              </div>
+              <div class="form-group col-md-6">
+                  <label for="inputEmail4">Field Name</label>
+                  <input type="text" class="form-control" formControlName="FieldName" id="inputEmail4" placeholder="Field Name">
+                </div>              
+            </div>        
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputEmail4">Type</label>             
+                    <select formControlName="Type" class="form-control" (change)="changetypeid(doctypeEditForm.value.Type)">
+                      <option>select a Type </option>
+                      <option *ngFor="let t of type; let i=index; let odd=odd;">{{t.name}}</option>
+                    </select>  
+                  </div>
+              <div class="form-group col-md-6">
+                <label for="inputEmail4">Applicable To</label>
+                <select formControlName="ApplicableTo" class="form-control">
+                  <option>select a Applicable To</option>
+                  <option *ngFor="let a of changeApplicable(typeid); let i=index; let odd=odd;" value="{{a.name}}">
+                    {{a.name}}</option>
+                </select>  
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputEmail4">Doc Type</label>
+                <select formControlName="DocType" class="form-control">
+                  <option>select a DocType </option>
+                  <option *ngFor="let d of changeDocType(typeid); let i=index; let odd=odd;" value="{{ d.name }}">
+                  {{d.name}}</option>
+                </select>  
+              </div>
+              <div class="form-group col-md-6">
+                <label for="Status">IsRequired</label>
+                <div>
+                    <label class="switch">
+                        <input type="checkbox" formControlName="IsRequired">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+              </div>            
+            </div>          
+            <div class="form-row">
+                <div class="form-group col-md-6 pull-right">
+                    <button type="submit" (click)="doctypeedit()"  [disabled]="!doctypeEditForm.valid" class="btn btn-primary waves-effect waves-light">Save</button>
+                  </div>    
+            </div>
+          </form>
+        </div>
+    </div>

@@ -1,0 +1,121 @@
+
+agm-map { height: 500px; }
+
+textarea.form-control1 {
+height: 210px;
+}
+.user_scroll ,.provider_scroll {
+   
+    overflow: auto;
+    height: 700px;
+
+}
+
+.reset_btn {
+    cursor: pointer;
+}
+h3 {
+    font-weight: 600;
+    font-size: 20px;
+}
+.form-control1 {
+    background-color: #FFFFFF;
+    border: 1px solid #E3E3E3;
+    border-radius: 4px;
+    color: #565656;
+    padding: 8px 12px;
+    height: 40px;
+    display: block;
+    font-size: 14px;
+    line-height: 1.42857143;
+    width: 100%;
+    box-shadow: none;
+}
+.form-group1 {
+    margin-bottom: 15px;
+}
+.input_label {
+    display: block;
+}
+.box-shadow{
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08), 0 6px 6px rgba(0, 0, 0, 0);
+    padding: 25px;
+}
+   .search-form .form-group input.form-control::-webkit-input-placeholder{
+  display:none;
+}
+.search-form .form-group input.form-control::-moz-placeholder{
+  display:none;
+}
+.navbar-right{
+  min-width:450px; /*or I can probably just use columns*/
+}
+.navbar-right form{
+  width:100%;
+}
+.form-group{
+  position:relative;
+width:0%;
+  min-width:60px;
+height:60px;
+overflow:hidden;
+transition: width 1s;
+backface-visibility:hidden;
+border-radius: 50px;
+}
+.form-group input.form-control{
+  position:absolute;
+  top:0;
+  right:21px;
+
+  outline:none;
+  width:50%;
+  height:40px;
+  margin:0;
+  z-index:10;
+      border-radius: 50px!important;
+}
+input[type="text"].form-control{
+  -webkit-appearence:none;
+  -webkit-border-radius:0;
+}
+.form-control-submit,
+.search-label{
+  width:40px;
+  height:40px;
+  position:absolute;
+  right:21px;
+  top:0;
+  padding:0;
+  margin:0;
+  text-align:center;
+  cursor:pointer;
+  line-height:47px;
+  background:white;
+}
+.form-control-submit{
+  background:#fff; /*stupid IE*/
+    opacity: 0;
+  color:transparent;
+  border:none;
+  outline:none;
+  z-index:-1;
+}
+.search-label{
+  z-index:90;
+}
+.form-group.sb-search-open,
+.no-js .sb-search-open{
+  width:100%;
+}
+.form-group.sb-search-open .search-label,
+.no-js .sb-search .search-label {
+ background: #ffcd3c;
+    color: #fff;
+    z-index: 11;
+    border-radius: 50px;
+}
+.form-group.sb-search-open .form-control-submit,
+.no-js .form-control .form-control-submit {
+  z-index: 90;
+}

@@ -1,0 +1,40 @@
+<div class="container card">
+  <h4 class="headings_txt">AppSlider Edit</h4>
+  <div class="content">
+    <form [formGroup]="appSliderEditForm" autocomplete="off" enctype="multipart/form-data">
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputEmail4">Title name</label>
+          <input type="text" class="form-control" formControlName="Title" id="inputEmail4" placeholder="Title name... ">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputEmail4">Description</label>
+          <input type="text" class="form-control" formControlName="Description" id="inputEmail4"
+            placeholder="Description ">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <img [src]="imagefilename" alt="Smiley face" height="100" width="100" onerror="this.onerror=null;this.src='assets/img/user.png';">
+          <input type="file" class="form-control-file" (change)="readURL($event)" formControlName="file" accept="image/*"
+            id="exampleFormControlFile1" #img>            
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputPassword4">Type of a User </label>
+          <select class="form-control" formControlName="Type">
+            <option selected disabled>select a Type </option>
+            <option value="user">User</option>
+            <option value="provider">Provider</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6 pull-right">
+          <!-- [disabled]="!appsliderAddForm.valid" (click)="appslideradd()" -->
+          <button type="submit" (click)="appslideredit()" [disabled]="!appSliderEditForm.valid"
+            class="btn btn-primary waves-effect waves-light">Save</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

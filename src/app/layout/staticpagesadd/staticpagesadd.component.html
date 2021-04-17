@@ -1,0 +1,34 @@
+<div class="container card">
+  <h4 class="headings_txt">Static Pages Add</h4>
+    <div class="content">
+      <form [formGroup]="staticpageAddForm" autocomplete="off">
+          <div class="form-row">
+            <div class="form-group col-md-6"> 
+                <label for="inputEmail4">Page Name</label>
+                <input type="text" class="form-control" formControlName="PageName" id="inputEmail4" placeholder="Page Name">  
+            </div>          
+            <div class="form-group col-md-6">
+              <label for="inputPassword4">Page Url</label>
+              <input type="text" class="form-control" formControlName="Url" id="inputPassword4" placeholder="Page Url">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="htmlcontent">Html content</label>
+                <textarea class="form-control" formControlName="HtmlContent" [(ngModel)]="textareaCode" (keyup)='setFrame()' autocomplete="off" wrap="logical"
+                  spellcheck="false"> </textarea>
+            </div>
+              <div class="col-md-6">
+              <div class="text_editor">
+                <iframe #iframe class="ttextarea"></iframe>
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+              <div class="form-group col-md-6 pull-right">
+                  <button type="submit" (click)="staticadd()"  [disabled]="!staticpageAddForm.valid" class="btn btn-primary waves-effect waves-light">Save</button>
+                </div>    
+          </div>
+        </form>
+      </div>
+  </div>

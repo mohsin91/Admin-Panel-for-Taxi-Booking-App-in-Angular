@@ -1,0 +1,103 @@
+<div class="container card">
+  <h4 class="headings_txt">Peek Charges Add</h4>
+  <div class="content">
+    <form [formGroup]="peekchargesEditForm" autocomplete="off" enctype="multipart/form-data">
+      <div class="form-row">
+
+<span>
+    <input type="radio" formControlName="type" name="type" (click)="changestatus('day')" value="day" [checked]='dayDate'> Day
+    <input type="radio" formControlName="type" name="type" (click)="changestatus('week')" value="week" [checked]='weekDate'> Week
+</span>
+         
+        <!-- <div class="btn-group btn-group-toggle" data-toggle="buttons">
+          <label class="btn btn-secondary" (change)="changestatus('day')">
+              <input type="radio" formControlName="type" name="type" value="day" [checked]='true'> Day
+            </label>
+          <label class="btn btn-default active">
+            <input type="radio" formControlName="type" name="type" (change)="changestatus('week')" value="week"> Week
+          </label>
+        </div> -->
+        <!-- <label class="btn btn-default active">
+            <input type="radio" name="rad" (click)="changestatus('week')" checked> Week
+          </label>
+          <label class="btn btn-secondary">
+            <input type="radio" name="rad" (click)="changestatus('day')" > Day
+          </label> -->
+
+      </div>
+
+      <div class="form-row">
+      <div class="form-group col-md-8" *ngIf="dayDate">
+          <label for="inputEmail4">Select Date</label>
+        <ejs-datepicker strictMode='true' format='dd/MM/yyyy' formControlName="DayDate" placeholder='Enter date' [value]='DayDate' [min]='minDate'
+          [max]='maxDate'></ejs-datepicker>
+        </div>
+        <div class="form-group col-md-8" *ngIf="weekDate">
+          <ng-multiselect-dropdown
+          formControlName="week"
+          [placeholder]="'Select a week '"
+          [data]="weekList"        
+          [(ngModel)]="weekListItems"      
+          [settings]="weekSettings"
+        >
+        </ng-multiselect-dropdown> 
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-8">
+          <label for="inputEmail4">Name</label>
+          <input type="text" class="form-control" formControlName="name" id="inputEmail4" placeholder="Enter the Name">
+        </div>
+      </div> 
+
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputEmail4">Start Time</label>
+          <ngb-timepicker formControlName="starttime" [(ngModel)]="time" [meridian]="meridian"></ngb-timepicker>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputEmail4">End Time</label>
+          <ngb-timepicker formControlName="endtime" [(ngModel)]="time1" [meridian]="meridian1"></ngb-timepicker>
+        </div>
+
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-8">
+          <label for="inputEmail4">Fare (eg. 1x, 1.5, 2x)</label>
+          <input type="number" class="form-control" formControlName="fare" id="inputEmail4" placeholder="Enter the Fare Value (1x, 1.5, 2x)">
+        </div>
+
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputEmail4">Min Amount</label>
+          <input type="number" class="form-control" formControlName="minamount" id="inputEmail4" placeholder="Enter the MinAmount">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputEmail4">Max Amount</label>
+          <input type="number" class="form-control" formControlName="maxamount" id="inputEmail4" placeholder="Enter the MaxAmount">
+        </div>
+      </div> 
+
+      <!-- <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="Status">Status</label>
+          <div>
+            <label class="switch">
+              <input type="checkbox" formControlName="IsActive">
+              <span class="slider"></span>
+            </label>
+          </div>
+        </div>
+      </div> -->
+      <div class="form-row">
+        <div class="form-group col-md-6 pull-right">
+          <!-- [disabled]="!ridevtypeAddForm.valid" -->
+          <button type="submit" (click)="peekchargesEdit()" [disabled]="!peekchargesEditForm.valid"
+            class="btn btn-primary waves-effect waves-light">Save</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,96 @@
+<div class="content">
+  <div class="container-fluid">
+    <div class="row">
+      <h4 class="headings_txt">God's Eye</h4>
+    </div>
+    <div class="row">
+      <div class="common_button">
+        <div class="common_width">
+          <a href="" class="a_text">Enroute to Pickup (3)</a>
+        </div>
+        <div class="common_width">
+          <a href="" class="a_text">Reached Pickup (20)</a>
+        </div>
+        <div class="common_width">
+          <a href="" class="a_text">Journey Started (1)</a>
+        </div>
+        <div class="common_width">
+          <a href="" class="a_text">Available</a>
+        </div>
+        <div class="common_width">
+          <a href="" class="a_text bg_yellow">All (29)</a>
+        </div>
+      </div>
+    </div>
+    <div class="">
+      <div class="col-md-6">
+        <div class="inner_left">
+          <h5>All</h5>
+          
+          <div class="second_space">
+          </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card full_bg">
+            <h3>Provider</h3>
+        <div class="our_miss provider_scroll" id="nscroll" detect-scroll (onScroll)="handleScroll($event , 'provider', 1)">
+                <div class="second_spac" *ngFor="let r of result; let i = index">
+                  <div class="members">
+                    <span class="tes-img" *ngIf="r.Image != 'NULL' && r.Image != ''; else imagepelseBlock">
+                      <img src="{{r.image}}" alt="Smiley face">
+                    </span>
+                    <ng-template #imagepelseBlock>
+                      <span class="tes-img">
+                        <img src="assets/img/faces/face-0.jpg" alt="user face" />
+                      </span>
+                    </ng-template>
+                    <div class="right_pad">
+                      <p class="hide_num">{{r.Mobile}}</p>
+                      <p class="mem_name">{{r.FirstName}} {{r.LastName}}</p>
+                    </div>
+                  </div>
+                </div>
+        </div>
+      </div>
+    </div>
+  </div>
+          <span class="search_span">
+            <div class="navbar-right">
+              <div class="search-form" role="search" action="" novalidate="true">
+                <div class="form-group pull-right" id="search">
+                  <input type="text" [(ngModel)]="searchdata" autocomplete="off" class="form-control" placeholder="Search">
+                  <button type="submit" (click)='findname(searchdata)' class="form-control form-control-submit">Submit</button>
+                  <span class="search-label"><i class="fas fa-search"></i></span>
+                </div>
+              </div>
+            </div>
+          </span>
+        </div>
+
+      </div>
+      <div class="col-md-6">
+        <div class="inner_left">
+          <h5>Map <span class="refresh_button"><a (click)='reset()' class="reset_btn">Refresh</a></span></h5>
+          <div class="members">
+              <agm-map   [fitBounds]="true"
+                          [zoom]="15"
+                          [disableDefaultUI]="true"
+                          [zoomControl]="true">
+                <agm-marker [agmFitBounds]="true" [markerDraggable]="false"
+                  *ngFor="let d of result; let i = index" [latitude]="d.Latitude" [longitude]="d.Longitude" [iconUrl]="icon">
+                  <!-- <agm-info-window>{{pFirstName}} {{pLastName}}</agm-info-window> -->
+                <agm-info-window>
+                  <div class="title">{{ d.FirstName }} {{ d.LastName }}</div>
+                </agm-info-window>
+                </agm-marker>
+                <!-- <agm-direction [origin]="origin" [destination]="destination">
+                </agm-direction> -->
+              </agm-map>
+          </div>
+          <div class="second_space">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

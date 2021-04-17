@@ -1,0 +1,432 @@
+/* You can add global styles to this file, and also import other style files */
+/*common css classes*/
+@import '../node_modules/@syncfusion/ej2-base/styles/material.css';
+@import '../node_modules/@syncfusion/ej2-buttons/styles/material.css';
+@import '../node_modules/@syncfusion/ej2-inputs/styles/material.css';
+@import '../node_modules/@syncfusion/ej2-popups/styles/material.css';
+@import '../node_modules/@syncfusion/ej2-lists/styles/material.css';
+@import '../node_modules/@syncfusion/ej2-splitbuttons/styles/material.css';
+@import '../node_modules/@syncfusion/ej2-calendars/styles/material.css';
+@import '../node_modules/@syncfusion/ej2-angular-calendars/styles/material.css';
+@font-face {
+    font-family: 'Avenir Book';
+    src: url('assets/fonts/avenir_book.ttf');
+}
+@font-face {
+    font-family: 'Avenir Medium';
+    src: url('assets/fonts/avenir_medium.ttf');
+}
+@font-face {
+    font-family: 'Avenir Heavy';
+    src: url('assets/fonts/avenir_heavy.ttf');
+}
+.card .content .text-first{
+	margin-top: 10px;
+    font-size: 22px;
+    font-weight: bold;	
+}
+.card .content .text-second{
+	margin-top: 0px;
+    font-size: 15px;
+    /*font-weight: bold;	*/
+}
+.span {
+	color: #525174;
+	font-weight: bold!important;
+}
+@media (max-width: 3600px) {
+	.logout-img {
+	color:#fff!important;
+	border-radius: 30px!important;
+    background: #FF4E00;
+}
+/*	.navbar-default .navbar-nav > li > a:not(.btn):hover {
+	color:#fff!important;
+	border-radius: 30px!important;
+    background-color: #FF4E00!important;
+}*/
+
+}
+
+
+
+/*laptop*/
+@media (min-width: 992px) and (max-width: 1024px) {
+	.col-rider {
+		/*width: 44.333333%!important;*/
+		margin: 0px 0px 0px 80px;
+	}
+	.col-driver {
+		/*width: 44.333333%!important;*/
+		margin: 0px 0px 0px 20px;
+	}
+	.col-company {
+		
+		margin: 0px 0px 0px 80px;
+	}
+	.col-total {
+		
+		margin: 0px 0px 0px 20px;
+	}
+		.card-riders {
+    background: #77b0f2;
+    width: 120px;
+    height: 120px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+        /*margin-left: 80px;*/
+    /* background-color: white; */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03), 0 0 0 1px rgba(63, 63, 68, 0);
+}
+.card-drivers {
+    background: #7793f2;
+    width: 120px;
+    height: 120px;
+        /*margin-left: 80px;*/
+    border-radius: 10px;
+    margin-bottom: 30px;
+ 
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03), 0 0 0 1px rgba(63, 63, 68, 0);
+}
+.card-companies {
+    background: #8a77f2;
+    width: 120px;
+    height: 120px;
+        /*margin-left: 80px;*/
+    border-radius: 10px;
+    margin-bottom: 30px;
+ 
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03), 0 0 0 1px rgba(63, 63, 68, 0);
+}
+.card-total-earnings {
+    background: #93f276;
+    width: 120px;
+    height: 120px;
+        /*margin-left: 80px;*/
+    border-radius: 10px;
+    margin-bottom: 30px;
+ 
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03), 0 0 0 1px rgba(63, 63, 68, 0);
+}
+/*ride statics*/
+
+.card-total-rides {
+    background: #77D1F2;
+    width: 120px;
+    height: 120px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+        /*margin-left: 80px;*/
+    /* background-color: white; */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03), 0 0 0 1px rgba(63, 63, 68, 0);
+}
+.card-ongoing {
+    background: #F2DA77;
+    width: 120px;
+    height: 120px;
+        /*margin-left: 80px;*/
+    border-radius: 10px;
+    margin-bottom: 30px;
+ 
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03), 0 0 0 1px rgba(63, 63, 68, 0);
+}
+.card-cancel-rides {
+    background: #F27777;
+    width: 120px;
+    height: 120px;
+        /*margin-left: 80px;*/
+    border-radius: 10px;
+    margin-bottom: 30px;
+ 
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03), 0 0 0 1px rgba(63, 63, 68, 0);
+}
+.card-completed-rides {
+    background: #93F277;
+    width: 120px;
+    height: 120px;
+        /*margin-left: 80px;*/
+    border-radius: 10px;
+    margin-bottom: 30px;
+ 
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03), 0 0 0 1px rgba(63, 63, 68, 0);
+}	
+}
+/*pc or computer screens*/
+@media (min-width: 1025px){
+	.col-rider {
+		/*width: 44.333333%!important;*/
+		margin: 0px 5px 0px 80px;
+	}
+	.col-driver {
+		/*width: 44.333333%!important;*/
+		margin: 0px 5px 0px -40px;
+	}
+	.col-company {
+		/*width: 44.333333%!important;*/
+		margin: 0px 5px 0px 80px;
+	}
+	.col-total {
+		/*width: 44.333333%!important;*/
+		margin: 0px 5px 0px -40px;
+	}
+	/*site statics*/
+		.card-riders {
+    background: #77b0f2;
+    width: 120px;
+    height: 120px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+        /*margin-left: 80px;*/
+    /* background-color: white; */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03), 0 0 0 1px rgba(63, 63, 68, 0);
+}
+.card-drivers {
+    background: #7793f2;
+    width: 120px;
+    height: 120px;
+        /*margin-left: 80px;*/
+    border-radius: 10px;
+    margin-bottom: 30px;
+ 
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03), 0 0 0 1px rgba(63, 63, 68, 0);
+}
+.card-companies {
+    background: #8a77f2;
+    width: 120px;
+    height: 120px;
+        /*margin-left: 80px;*/
+    border-radius: 10px;
+    margin-bottom: 30px;
+ 
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03), 0 0 0 1px rgba(63, 63, 68, 0);
+}
+.card-total-earnings {
+    background: #93f276;
+    width: 120px;
+    height: 120px;
+        /*margin-left: 80px;*/
+    border-radius: 10px;
+    margin-bottom: 30px;
+ 
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03), 0 0 0 1px rgba(63, 63, 68, 0);
+}	
+/*ride statics*/
+
+.card-total-rides {
+    background: #77D1F2;
+    width: 120px;
+    height: 120px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+        /*margin-left: 80px;*/
+    /* background-color: white; */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03), 0 0 0 1px rgba(63, 63, 68, 0);
+}
+.card-ongoing {
+    background: #F2DA77;
+    width: 120px;
+    height: 120px;
+        /*margin-left: 80px;*/
+    border-radius: 10px;
+    margin-bottom: 30px;
+ 
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03), 0 0 0 1px rgba(63, 63, 68, 0);
+}
+.card-cancel-rides {
+    background: #F27777;
+    width: 120px;
+    height: 120px;
+        /*margin-left: 80px;*/
+    border-radius: 10px;
+    margin-bottom: 30px;
+ 
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03), 0 0 0 1px rgba(63, 63, 68, 0);
+}
+.card-completed-rides {
+    background: #93F277;
+    width: 120px;
+    height: 120px;
+        /*margin-left: 80px;*/
+    border-radius: 10px;
+    margin-bottom: 30px;
+ 
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03), 0 0 0 1px rgba(63, 63, 68, 0);
+}	
+}
+/*tablets*/
+@media (min-width: 768px) and (max-width: 993px) {
+	.col-site {
+		width: 44.333333%!important;
+		margin: 0px 5px 0px 10px;
+	}
+	.card-riders {
+    background: #77b0f2;
+    width: 360px;
+    height: 120px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+        margin-left: 80px;
+    /* background-color: white; */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03), 0 0 0 1px rgba(63, 63, 68, 0);
+}
+.card-drivers {
+    background: #7793f2;
+    width: 360px;
+    height: 120px;
+        margin-left: 80px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+ 
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03), 0 0 0 1px rgba(63, 63, 68, 0);
+}
+.card-companies {
+    background: #8a77f2;
+    width: 360px;
+    height: 120px;
+    margin-left: 80px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03), 0 0 0 1px rgba(63, 63, 68, 0);
+}
+.card-total-earnings {
+    background: #93f276;
+    width: 360px;
+    height: 120px;
+    margin-left: 80px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03), 0 0 0 1px rgba(63, 63, 68, 0);
+}
+/*ride statics*/
+
+.card-total-rides {
+    background: #77D1F2;
+    width: 360px;
+    height: 120px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+        margin-left: 80px;
+    /* background-color: white; */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03), 0 0 0 1px rgba(63, 63, 68, 0);
+}
+.card-ongoing {
+    background: #F2DA77;
+    width: 360px;
+    height: 120px;
+        margin-left: 80px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+ 
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03), 0 0 0 1px rgba(63, 63, 68, 0);
+}
+.card-cancel-rides {
+    background: #F27777;
+    width: 360px;
+    height: 120px;
+        margin-left: 80px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+ 
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03), 0 0 0 1px rgba(63, 63, 68, 0);
+}
+.card-completed-rides {
+    background: #93F277;
+    width: 360px;
+    height: 120px;
+        margin-left: 80px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+ 
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03), 0 0 0 1px rgba(63, 63, 68, 0);
+}	
+}
+/*small devices*/
+@media (max-width: 427px) {
+	/*.col-site {
+		width: 44.333333%!important;
+		margin: 0px 5px 0px 10px;
+	}
+	*/
+.card-riders {
+    background: #77b0f2;
+    width: 150px;
+    height: 120px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+        margin-left: 60px;
+    /* background-color: white; */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03), 0 0 0 1px rgba(63, 63, 68, 0);
+}
+.card-drivers {
+    background: #7793f2;
+    width: 150px;
+    height: 120px;
+        margin-left: 60px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+ 
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03), 0 0 0 1px rgba(63, 63, 68, 0);
+}
+.card-companies {
+    background: #8a77f2;
+    width: 150px;
+    height: 120px;
+        margin-left: 60px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+ 
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03), 0 0 0 1px rgba(63, 63, 68, 0);
+}
+.card-total-earnings {
+    background: #93f276;
+    width: 150px;
+    height: 120px;
+        margin-left: 60px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+ 
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03), 0 0 0 1px rgba(63, 63, 68, 0);
+}
+/*ride statics*/
+
+.card-total-rides {
+    background: #77D1F2;
+    width: 150px;
+    height: 120px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+        margin-left: 60px;
+    /* background-color: white; */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03), 0 0 0 1px rgba(63, 63, 68, 0);
+}
+.card-ongoing {
+    background: #F2DA77;
+    width: 150px;
+    height: 120px;
+        margin-left: 60px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+ 
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03), 0 0 0 1px rgba(63, 63, 68, 0);
+}
+.card-cancel-rides {
+    background: #F27777;
+    width: 150px;
+    height: 120px;
+        margin-left: 60px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+ 
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03), 0 0 0 1px rgba(63, 63, 68, 0);
+}
+.card-completed-rides {
+    background: #93F277;
+    width: 150px;
+    height: 120px;
+        margin-left: 60px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+ 
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03), 0 0 0 1px rgba(63, 63, 68, 0);
+}	
+}

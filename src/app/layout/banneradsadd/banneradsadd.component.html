@@ -1,0 +1,53 @@
+<div class="container card">
+  <h4 class="headings_txt">Banner Advertisement Add</h4>
+  <div class="content">
+    <form [formGroup]="banneradsAddForm" autocomplete="off" enctype="multipart/form-data">
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputEmail4">Title name</label>
+          <input type="text" class="form-control" formControlName="Title" id="inputEmail4" placeholder="Title name... ">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputEmail4">Description</label>
+          <input type="text" class="form-control" formControlName="Description" id="inputEmail4"
+            placeholder="Description ">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <div class="tes-img"
+            *ngIf="imagefilename != 'NULL' && imagefilename != null && imagefilename != ''; else imageelseBlock">
+            <img [src]="imagefilename" alt="User face" height="100" width="100"
+              onerror="this.onerror=null;this.src='assets/img/user.png';">
+          </div>
+          <ng-template #imageelseBlock>
+            <img src="assets/img/user.png" alt="User face" height="100" width="100">
+          </ng-template>
+          <input type="file" class="form-control-file" (change)="readURL($event)" formControlName="file"
+            accept="image/*" id="exampleFormControlFile1" #img>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputEmail4">Url</label>
+          <input type="text" class="form-control" formControlName="Url" id="inputEmail4" placeholder="Title name... ">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="Status">Status</label>
+          <div>
+            <label class="switch">
+              <input type="checkbox" formControlName="IsActive">
+              <span class="slider"></span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6 pull-right">
+          <button type="submit" (click)="appslideradd()" [disabled]="!banneradsAddForm.valid"
+            class="btn btn-primary waves-effect waves-light">Save</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+<div class="container card">
+  <h4 class="headings_txt">Vehicle Brand Add</h4>
+    <div class="content">
+      <form [formGroup]="vehiclebrandAddForm" autocomplete="off">
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputEmail4">Brand Name</label>
+              <input type="text" class="form-control" formControlName="BrandName" id="inputEmail4" placeholder="Brand Name">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputEmail4">Country Name</label>  
+                    <ng-multiselect-dropdown formControlName="CountryId" 
+                    [placeholder]="'Select a Country '" 
+                    [data]="cdropdownList"
+                      [settings]="cdropdownSettings">
+                    </ng-multiselect-dropdown>
+            </div>
+          </div>  
+          <div class="form-row">
+              <div class="form-group col-md-6 pull-right">
+                  <button type="submit" (click)="vehiclebrandadd()"  [disabled]="!vehiclebrandAddForm.valid" class="btn btn-primary waves-effect waves-light">Save</button>
+                </div>    
+          </div>
+        </form>
+      </div>
+  </div>

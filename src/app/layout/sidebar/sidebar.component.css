@@ -1,0 +1,23 @@
+.sidebar .nav li > a {
+    padding: 1px;
+}
+.sidebar {top: 68px;}
+.logo a {
+    color: #525174;
+    font-family: Avenir Medium;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.myclass{
+    display: block !important;
+}
+
+.sidebarColor {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    box-shadow: none;
+}
+.panel {
+    margin-bottom: 0;}

@@ -1,0 +1,15 @@
+.nav>li>a {
+    display: inline;
+    cursor: pointer;
+}
+
+.reset_btn {
+    cursor: pointer;
+}
+
+
+.justify-content-center {
+    display: flex !important;
+    justify-content: center !important;
+    margin-left: 300px!important;
+}

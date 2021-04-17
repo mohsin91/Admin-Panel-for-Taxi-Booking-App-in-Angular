@@ -1,0 +1,43 @@
+<div class="container card">
+  <h4 class="headings_txt">State Add</h4>
+    <div class="content">
+      <form [formGroup]="stateAddForm" autocomplete="off">
+          <div class="form-row">
+            <div class="form-group col-md-6"> 
+                <label for="inputPassword4">Country Name</label>
+                <select class="form-control" formControlName="CountryId">
+                    <option>select a Country</option>
+                    <option *ngFor="let c of countrylist" value="{{c.Id}}" >{{c.CountryName}}</option>
+                  </select>          
+            </div>          
+            <!-- <control-messages [control]="countryAddForm.controls.CountryName"></control-messages> -->
+            <div class="form-group col-md-6">
+              <label for="inputPassword4">Short Code</label>
+              <input type="text" class="form-control" formControlName="ShortCode" maxlength="4" id="inputPassword4" placeholder="Short Code">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputEmail4">State Name</label>
+              <input type="text" class="form-control" formControlName="StateName" maxlength="45" id="inputEmail4" placeholder="State Name">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <label for="Status">Status</label>
+              <div>
+                  <label class="switch">
+                      <input type="checkbox" formControlName="Status">
+                      <span class="slider"></span>
+                  </label>
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+              <div class="form-group col-md-6 pull-right">
+                  <button type="submit" (click)="stateadd()"  [disabled]="!stateAddForm.valid" class="btn btn-primary waves-effect waves-light">Save</button>
+                </div>    
+          </div>
+        </form>
+      </div>
+  </div>

@@ -1,0 +1,104 @@
+<div class="container-fluid">
+    <div class="bd-example bd-example-tabs">
+        <nav>
+          <ul class="nav nav-tabs" id="nav-tab" role="tablist">
+            <li class="nav-item nav-link active show" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="false"> <a (click)="resetChange('provider')">User</a> </li>
+            <li class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="true"> <a (click)="resetChange('user')">Provider</a> </li>
+          </ul>
+        </nav>
+        <div class="tab-content" id="nav-tabContent">
+          <!-- user start -->
+          <div class="tab-pane fade" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+              <div class="content">
+                  <form [formGroup]="uauthAddForm" autocomplete="off">
+                      <div class="form-row">
+                        <div class="form-group col-md-8">
+                            <label for="inputEmail4">Authentication Type</label>                      
+                            <div>
+                                <label for="Status">OTP</label>
+                                <label class="switch">
+                                    <input type="checkbox" formControlName="authvalue">
+                                    <span class="slider"></span>
+                                </label>
+                            <label for="Status">Password</label>
+                            </div>
+                          </div>
+                          <div class="form-group col-md-4">
+                            <button type="submit" (click)="appconfigadd('uauthAddForm')"  [disabled]="!uauthAddForm.valid" class="btn btn-primary waves-effect waves-light">Save</button>
+                          </div>                                    
+                      </div>
+                  </form>  
+                  <form [formGroup]="uotpAddForm" autocomplete="off">
+                      <div class="form-row">
+                          <div class="form-group col-md-8">
+                            <label for="inputEmail4">OTP TIME</label>
+                            <input type="text" class="form-control" formControlName="otpvalue" id="inputEmail4" placeholder="otp timer">
+                          </div>
+                          <div class="form-group col-md-4">
+                              <button type="submit" (click)="appconfigadd('uotpAddForm')"  [disabled]="!uotpAddForm.valid" class="btn btn-primary waves-effect waves-light">Save</button>
+                            </div>                           
+                        </div> 
+                      </form>  
+                      <form [formGroup]="umapAddForm" autocomplete="off">                        
+                        <div class="form-row">
+                            <div class="form-group col-md-8">
+                              <label for="inputEmail4">MAP_API_KEY</label>
+                              <input type="text" class="form-control" formControlName="mapvalue" id="inputEmail4" placeholder="Map Api Key Value">
+                            </div> 
+                            <div class="form-group col-md-4">
+                                <button type="submit" (click)="appconfigadd('umapAddForm')"  [disabled]="!umapAddForm.valid" class="btn btn-primary waves-effect waves-light">Save</button>
+                              </div>                                             
+                          </div> 
+                          </form>                           
+                  </div>
+          </div>
+          <!-- user end -->
+          <!-- provider start -->
+          <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+              <div class="content">
+                  <form [formGroup]="pauthAddForm" autocomplete="off">
+                      <div class="form-row">
+                          <div class="form-group col-md-8">
+                            <label for="inputEmail4">Authentication Type</label>
+                              <div>
+                                  <label for="Status">OTP</label>
+                                  <label class="switch">
+                                      <input type="checkbox" formControlName="authvalue">
+                                      <span class="slider"></span>
+                                  </label>
+                              <label for="Status">Password</label>
+                              </div>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <button type="submit" (click)="appconfigadd('pauthAddForm')"  [disabled]="!pauthAddForm.valid" class="btn btn-primary waves-effect waves-light">Save</button>
+                              </div>                                                                  
+                        </div> 
+                      </form>  
+                      <form [formGroup]="potpAddForm" autocomplete="off">                         
+                        <div class="form-row">
+                            <div class="form-group col-md-8">
+                              <label for="inputEmail4">OTP TIME</label>
+                              <input type="text" class="form-control" formControlName="otpvalue" id="inputEmail4" placeholder="otp timer">
+                            </div>
+                            <div class="form-group col-md-4">
+                                <button type="submit" (click)="appconfigadd('potpAddForm')"  [disabled]="!potpAddForm.valid" class="btn btn-primary waves-effect waves-light">Save</button>
+                              </div>                              
+                          </div> 
+                        </form>  
+                        <form [formGroup]="pmapAddForm" autocomplete="off">                          
+                          <div class="form-row">
+                              <div class="form-group col-md-8">
+                                <label for="inputEmail4">MAP_API_KEY</label>
+                                <input type="text" class="form-control" formControlName="mapvalue" id="inputEmail4" placeholder="Map Api Key Value">
+                              </div>  
+                              <div class="form-group col-md-4">
+                                  <button type="submit" (click)="appconfigadd('pmapAddForm')"  [disabled]="!pmapAddForm.valid" class="btn btn-primary waves-effect waves-light">Save</button>
+                                </div>                                               
+                            </div>                             
+                    </form>
+                  </div>                    
+          </div>
+          <!-- provider end -->
+        </div>
+      </div>  
+</div>

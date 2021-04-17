@@ -1,0 +1,94 @@
+<div class="container card">
+  <h4 class="headings_txt">Promo Codes Add</h4>
+  <div class="content">
+    <form [formGroup]="promocodesAddForm" autocomplete="off" enctype="multipart/form-data">
+      <div class="form-row">
+        <div class="form-group col-md-10">
+          <label for="inputEmail4">Coupon Name</label>
+          <input type="text" class="form-control" formControlName="name" id="inputEmail4" placeholder="Coupon Name">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputEmail4">Coupon Code</label>
+          <input type="text" class="form-control" formControlName="coupon" id="inputEmail4" placeholder="Coupon Code">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputEmail4">Discount Type</label>
+          <select formControlName="discounttype" class="form-control">
+            <option value="" disabled selected>select a discount Type </option>
+            <option value="percent">Percentage (%) </option>
+            <option value="value">Value </option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputEmail4">Discount Value</label>
+          <input type="number" class="form-control" formControlName="discount" id="inputEmail4" placeholder="Discount Value">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputEmail4">Description</label>
+          <input type="text" class="form-control" formControlName="description" id="inputEmail4" placeholder="Enter Description">
+        </div>
+
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputEmail4">Valid From</label>
+        <ejs-datepicker strictMode='true' format='dd/MM/yyyy' formControlName="validfrom" placeholder='Enter date' [value]='validfrom' [min]='minDate'
+          [max]='maxDate'></ejs-datepicker>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputEmail4">Valid To</label>
+          <ejs-datepicker strictMode='true' format='dd/MM/yyyy' formControlName="validto" placeholder='Enter date' [value]='validto' [min]='minDate'
+            [max]='maxDate'></ejs-datepicker>
+
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputEmail4">Threshold (max number of times this coupon can be redeemed)</label>
+          <input type="number" class="form-control" formControlName="threshold" id="inputEmail4" placeholder="Enter Threshold Value">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="inputEmail4">Redeemable Per User</label>
+            <select formControlName="redeemableperuser" class="form-control" >
+              <option value="" disabled selected>select a Redeemable Type </option>
+              <option value="once" >Once </option>
+              <option value="multiple" >Multiple </option>
+            </select>
+        </div>
+      </div>
+      <div class="form-row">
+          <div class="form-group col-md-6">
+              <label for="inputEmail4">Min Value To Redeem</label>
+              <input type="number" class="form-control" formControlName="minvalue" id="inputEmail4" placeholder="Enter Min Redeem Value">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputEmail4">Max Value To Redeem</label>
+                <input type="number" class="form-control" formControlName="maxvalue" id="inputEmail4" placeholder="Enter Max Redeem Value">
+            </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="Status">Status</label>
+          <div>
+            <label class="switch">
+              <input type="checkbox" formControlName="IsActive">
+              <span class="slider"></span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6 pull-right">
+          <!-- [disabled]="!ridevtypeAddForm.valid" -->
+          <button type="submit" (click)="promocodesAdd()" [disabled]="!promocodesAddForm.valid"
+            class="btn btn-primary waves-effect waves-light">Save</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

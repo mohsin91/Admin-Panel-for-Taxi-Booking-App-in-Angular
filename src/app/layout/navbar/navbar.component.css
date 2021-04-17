@@ -1,0 +1,30 @@
+
+
+@media (min-width: 768px) {
+.navbar-nav>li {
+    float: right;
+}
+}
+.logout_btn{
+    padding: 5px 10px 5px 10px!important;
+}
+.logo a {
+    color: #525174;
+    font-family: Avenir Medium;
+    font-size: 20px;
+    font-weight: 400;
+}
+.logo {
+    padding: 5px 0;
+    margin-left: 20px;
+}
+.logoadmin {
+    width:50px;
+    height:37px;
+  
+}
+
+
+.nav>li {
+    margin: 7px 15px;
+}

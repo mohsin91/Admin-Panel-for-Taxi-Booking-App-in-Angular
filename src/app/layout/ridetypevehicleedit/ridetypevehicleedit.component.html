@@ -1,0 +1,115 @@
+<div class="container card">
+  <h4 class="headings_txt">Ride Vehicle Type Edit</h4>
+  <div class="content">
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputEmail4">Vehicle Name</label>
+          <input type="text" class="form-control" [(ngModel)]="Name" id="inputEmail4" placeholder="Vehicle Name">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputEmail4">Country Name</label>
+          <select [(ngModel)]="CountryId" class="form-control"
+            (change)="changecountryid(CountryId)">
+            <option value="" disabled selected>select a Country </option>
+            <option *ngFor="let c of countrylist; let i=index; let odd=odd;" value="{{ c.Id }}">{{c.CountryName}}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="exampleFormControlFile1">Passive Icon</label>
+          <img [src]="Passiveimagefilename" alt="Passive Icon" height="100" width="100">
+          <input type="file" class="form-control-file" accept="image/*" (change)="readURL($event, '')" id="exampleFormControlFile1" #passiveimg>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="exampleFormControlFile1">Active Icon</label>
+          <img [src]="Activeimagefilename" alt="Active Icon" height="100" width="100">
+          <input type="file" class="form-control-file" accept="image/*" (change)="readURL($event, 'active')" id="exampleFormControlFile1" #activeimg>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputEmail4">State Name</label>
+          <ng-multiselect-dropdown [placeholder]="'Select a State '" [data]="sdropdownList"
+            [settings]="sdropdownSettings" [(ngModel)]="sselectedItems">
+          </ng-multiselect-dropdown>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputEmail4">City Name</label>
+          <ng-multiselect-dropdown [placeholder]="'Select a City '" [data]="cdropdownList"
+            [settings]="cdropdownSettings" [(ngModel)]="cselectedItems">
+          </ng-multiselect-dropdown>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputEmail4">Base Charge</label>
+          <input type="number" class="form-control" [(ngModel)]="BaseCharge" id="inputEmail4"
+            placeholder="Base Charge">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputEmail4">Price Per(KM)</label>
+          <input type="number" class="form-control" [(ngModel)]="MinCharge" id="inputEmail4"
+            placeholder="Price Per(KM)">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputEmail4">Currency Type</label>
+          <input type="text" class="form-control" [(ngModel)]="CurrencyType" id="inputEmail4"
+            placeholder="Currency Type" value="{{ this.CurrencyTypeValue }}">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputEmail4">Commission Percentage</label>
+          <input type="number" class="form-control" [(ngModel)]="CommissionPercentage" id="inputEmail4"
+            placeholder="Commission Percentage">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputEmail4">Waiting Charge</label>
+          <input type="number" class="form-control" [(ngModel)]="WaitingCharge" id="inputEmail4"
+            placeholder="Waiting Charge">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputEmail4">Capacity</label>
+          <input type="number" class="form-control" [(ngModel)]="Capacity" id="inputEmail4"
+            placeholder="Car Capacity">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputEmail4">Short Description</label>
+          <input type="text" class="form-control" [(ngModel)]="ShortDesc" id="inputEmail4"
+            placeholder="Short Description">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputEmail4">Long Description</label>
+          <input type="text" class="form-control" [(ngModel)]="LongDesc" id="inputEmail4"
+            placeholder="Long Description">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="Status">Status</label>
+          <div>
+            <label class="switch">
+              <input type="checkbox" [(ngModel)]="IsActive">
+              <span class="slider"></span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6 pull-right">
+          <button type="submit" (click)="ridevehicletypeEdit()" 
+          [disabled]="!LongDesc || !ShortDesc || !Name || !Capacity
+           || !CommissionPercentage || !BaseCharge || !MinCharge || 
+           !WaitingCharge || !CurrencyType || !CountryId || !sselectedItems || !cselectedItems"
+            class="btn btn-primary waves-effect waves-light">Save</button>
+        </div>
+      </div>
+  </div>
+</div>

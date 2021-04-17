@@ -1,0 +1,328 @@
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <h4 class="headings_txt">App Config</h4>
+        </div>
+        <div class="row">
+            <div class="col-md-9">
+                <ul class="drop_ul">
+                    <li>
+                        <div class="dropdown">
+                            <button class="btn btn-primary dropdown-toggle btn_color btn_pad" id="menu1" type="button"
+                                data-toggle="dropdown">All
+                                <span class="caret"></span></button>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                                <!-- <li role="presentation"><a role="menuitem" tabindex="-1" href="#">HTML</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">CSS</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">JavaScript</a></li> -->
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="icon_pos">
+                        <form class="mailchimp subscribe-form" action="" novalidate="true">
+                            <input type="email" name="EMAIL" id="subscriber-email" placeholder="Search">
+                            <button type="submit" id="subscribe-button" class="tm-btn"><span>Search</span></button>
+
+                            <!-- SUBSCRIPTION SUCCESSFUL OR ERROR MESSAGES -->
+
+                        </form>
+                    </li>
+                    <li>
+                        <a href="" class="reset_btn">RESET</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <div class="text-right">
+                    <a routerLink="" class="add_btn">ADD</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row second_row">
+            <div class="col-md-6">
+                <div class="inner_btn">
+                    <a href="">Select Action</a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="text-right export_btn">
+                    <a href="">Export</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card full_bg">
+                    <div class="our_miss">
+                        <ul class="nasv nav-pills">
+                            <li class="active full_div"><a data-toggle="pill" href="#General1"><span>General</span> </a></li>
+                            <li class="full_div"><a data-toggle="pill" href="#Email11"><span>Email</span></a></li>
+                            <li class="full_div"><a data-toggle="pill" href="#Appearance2"><span>Appearance</span> </a></li>
+                            <li class="full_div"><a data-toggle="pill" href="#SMS3"><span>SMS</span> </a></li>
+                            <li class="full_div"><a data-toggle="pill" href="#Social4"><span>Social Media</span> </a></li>
+                            <li class="full_div"><a data-toggle="pill" href="#App5"><span>App Settings</span></a></li>
+                            <li class="full_div"><a data-toggle="pill" href="#Installation6"><span>Installation</span> Settings</a></li>
+                            <li class="full_div"><a data-toggle="pill" href="#Store7"><span>Store Settings</span></a></li>
+                            <li class="full_div"><a data-toggle="pill" href="#Payment8"><span>Payment</span></a></li>
+                      </ul>
+                          <div class="tab-content">
+                            <div id="General1" class="tab-pane fade active in text_box">
+                                <div class="table_align">
+                                    <h3>User</h3>
+                                <table class="table">
+                                    <tbody>
+                                            <tr *ngFor="let r of userresult; let i = index">
+                                                <td>{{r.authname}}</td>
+                                                <td> <span *ngIf="r.FieldName === 'AUTH_TYPE'; else elseBlock">
+                                                <select class="form-control" [(ngModel)]="r.Value" (change)="disabledchange('UId'+r.Id)">
+                                                    <option [disabled]>select a Authentication Type</option>
+                                                    <option>OTP</option>
+                                                    <option>PWD</option>
+                                                    </select>  
+                                            </span>
+                                            <ng-template #elseBlock>                         
+                                                <input (click)="disabledchange('UId'+r.Id)" type="text" class="form-control" id="inputEmail4" [(ngModel)]="r.Value">
+                                                </ng-template>
+                                                </td>
+                                                <td><button type="submit" id="UId{{r.Id}}" disabled="true" (click)="editAppConfig('user',r.Id,r.Value,r.FieldName);adddisabledchange('UId'+r.Id)" class="btn btn-primary">Save</button></td>
+                                            </tr>
+                                            </tbody>
+                                        </table>   
+                                </div>   
+                                <div class="table_align">
+                                    <h3>Provider</h3>
+                                    <table class="table">
+                                        <tbody>
+                                            <tr *ngFor="let r of providerresult; let i = index">
+                                                <td>{{r.authname}}</td>
+                                                <td> <span *ngIf="r.FieldName === 'AUTH_TYPE'; else elseBlock">
+                                                        <select class="form-control" [(ngModel)]="r.Value" (change)="disabledchange('PId'+r.Id)">
+                                                            <option [disabled]>select a Authentication Type</option>
+                                                            <option>OTP</option>
+                                                            <option>PWD</option>
+                                                        </select>
+                                                    </span>
+                                            <ng-template #elseBlock>
+                                                <ng-container *ngIf="r.FieldName === 'PICKUP_DISTANCE'; else elseSecondBlock">
+                                            <input (click)="disabledchange('PId'+r.Id)" type="text" class="form-control" id="inputEmail4" [(ngModel)]="r.Value" placeholder="( In meters )">
+                                                </ng-container>
+                                            </ng-template>
+                                            <ng-template #elseSecondBlock>
+                                                <input (click)="disabledchange('PId'+r.Id)" type="text" class="form-control" id="inputEmail4" [(ngModel)]="r.Value">
+                                            </ng-template>
+                                                </td>
+                                                <td><button type="submit" id="PId{{r.Id}}" disabled (click)="editAppConfig('provider',r.Id,r.Value);adddisabledchange('PId'+r.Id)" class="btn btn-primary">Save</button></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>  
+                            </div>
+                            <div id="Email11" class="tab-pane fade text_box">
+                                <div class="table_align">
+                                    <table class="table">
+                                        <tbody>
+                                            <tr *ngFor="let r of emailresult; let i = index">
+                                                <td>{{r.authname}}</td>
+                                                <td class="posit"> <span *ngIf="r.FieldName === 'AUTH_TYPE'; else elseBlock">
+                                                        <select class="form-control" [(ngModel)]="r.Value" (change)="disabledchange('PId'+r.Id)">
+                                                            <option [disabled]>select a Authentication Type</option>
+                                                            <option>OTP</option>
+                                                            <option>PWD</option>
+                                                        </select>
+                                                    </span>
+                                                    <ng-template #elseBlock>
+                                                        <ng-container *ngIf="r.FieldName === 'SMTP_PASSWORD'; else elseBlock1">
+                                                        <input (click)="disabledchange('PId'+r.Id)" type="password" class="form-control" id="passwordmyInput" [(ngModel)]="r.Value">
+                                                        <i class="far fa-eye vieweye" (click)="viewpassword('v')" *ngIf="eyeview"></i>
+                                                        <i class="far fa-eye-slash vieweye" (click)="viewpassword('vs')" *ngIf="eyeviews"></i>
+                                                        </ng-container>
+                                                    </ng-template>
+                                                    <ng-template #elseBlock1><input (click)="disabledchange('PId'+r.Id)" type="text" class="form-control"
+                                                             [(ngModel)]="r.Value"> </ng-template>
+                                                </td>
+                                                <td><button type="submit" id="PId{{r.Id}}" disabled
+                                                        (click)="editAppConfig('provider',r.Id,r.Value);adddisabledchange('PId'+r.Id)"
+                                                        class="btn btn-primary">Save</button></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div id="Appearance2" class="tab-pane fade text_box">
+                                <div class="col-md-6">
+                                    <input type="text" placeholder="Name" id="name" name="name" required="">
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" placeholder="Name" id="name" name="name" required="">
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" placeholder="Name" id="name" name="name" required="">
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" placeholder="Name" id="name" name="name" required="">
+                                </div>
+                            
+                            </div>
+                            <div id="SMS3" class="tab-pane fade text_box">
+                                <div class="col-md-6">
+                                    <input type="text" placeholder="Name" id="name" name="name" required="">
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" placeholder="Name" id="name" name="name" required="">
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" placeholder="Name" id="name" name="name" required="">
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" placeholder="Name" id="name" name="name" required="">
+                                </div>
+                            </div>
+                            <div id="Social4" class="tab-pane fade text_box">
+                                <div class="col-md-6">
+                                    <input type="text" placeholder="Name" id="name" name="name" required="">
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" placeholder="Name" id="name" name="name" required="">
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" placeholder="Name" id="name" name="name" required="">
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" placeholder="Name" id="name" name="name" required="">
+                                </div>
+                            </div>
+                            <div id="App5" class="tab-pane fade text_box">
+                                    <div class="col-md-6">
+                                    <input type="text" placeholder="Name" id="name" name="name" required="">
+                                    </div>
+                                <div class="col-md-6">
+                                    <input type="text" placeholder="Name" id="name" name="name" required="">
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" placeholder="Name" id="name" name="name" required="">
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" placeholder="Name" id="name" name="name" required="">
+                                </div>
+                            </div>
+                            <div id="Installation6" class="tab-pane fade text_box">
+                                <div class="col-md-6">
+                                    <input type="text" placeholder="Name" id="name" name="name" required="">
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" placeholder="Name" id="name" name="name" required="">
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" placeholder="Name" id="name" name="name" required="">
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" placeholder="Name" id="name" name="name" required="">
+                                </div>
+                            </div>
+                            <div id="Store7" class="tab-pane fade text_box">
+                                <div class="col-md-6">
+                                    <input type="text" placeholder="Name" id="name" name="name" required="">
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" placeholder="Name" id="name" name="name" required="">
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" placeholder="Name" id="name" name="name" required="">
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" placeholder="Name" id="name" name="name" required="">
+                                </div>
+                            </div>
+                            <div id="Payment8" class="tab-pane fade text_box">
+                                <div class="col-md-6">
+                                    <input type="text" placeholder="Name" id="name" name="name" required="">
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" placeholder="Name" id="name" name="name" required="">
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" placeholder="Name" id="name" name="name" required="">
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" placeholder="Name" id="name" name="name" required="">
+                                </div>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </div>             
+    </div>
+</div>
+
+<!-- <div class="content">
+    <div class="container-fluid">
+        <div class="row">
+          <h2 style="font-weight:bold">AppConfig List</h2>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card full_bg">
+                    <div class="our_miss">
+                        <ul class="nasv nav-pills">
+                            <li class="active full_div"><a (click)="resetChange('user')" data-toggle="pill" href="#home"><span>User</span> </a></li>
+                            <li class="full_div"><a (click)="resetChange('provider')" data-toggle="pill" href="#menu1"><span>Provider</span></a></li>
+                      </ul>
+                          <div class="tab-content">
+                            <div id="home" class="tab-pane fade active in text_box">
+                                <table class="table">
+                                    <tbody>
+                                      <tr *ngFor="let r of result; let i = index">
+                                        <td>{{r.authname}}</td>
+                                       <td> <span *ngIf="r.FieldName === 'AUTH_TYPE'; else elseBlock">
+                                          <select class="form-control" [(ngModel)]="r.Value" (change)="disabledchange('UId'+r.Id)">
+                                              <option [disabled]>select a Authentication Type</option>
+                                              <option>OTP</option>
+                                              <option>PWD</option>
+                                            </select>  
+                                      </span>
+                                      <ng-template #elseBlock><input (click)="disabledchange('UId'+r.Id)" type="text" class="form-control" id="inputEmail4" [(ngModel)]="r.Value"> </ng-template>      
+                                       </td>
+                                        <td>{{r.Type}}</td>
+                                        <td><button type="submit" id="UId{{r.Id}}" disabled="true" (click)="editAppConfig('user',r.Id,r.Value)" class="btn btn-primary">Save</button></td>
+                                      </tr>
+                                    </tbody>
+                                  </table>  
+                            </div>
+                            <div id="menu1" class="tab-pane fade text_box">
+                                <table class="table">
+                                    <tbody>
+                                        <tr *ngFor="let r of result; let i = index">
+                                            <td>{{r.authname}}</td>
+                                           <td> <span *ngIf="r.FieldName === 'AUTH_TYPE'; else elseBlock">
+                                              <select class="form-control" [(ngModel)]="r.Value" (change)="disabledchange('PId'+r.Id)">
+                                                  <option [disabled]>select a Authentication Type</option>
+                                                  <option>OTP</option>
+                                                  <option>PWD</option>
+                                                </select>  
+                                          </span>
+                                          <ng-template #elseBlock><input (click)="disabledchange('PId'+r.Id)" type="text" class="form-control" id="inputEmail4" [(ngModel)]="r.Value"> </ng-template>      
+                                           </td>
+                                            <td>{{r.Type}}</td>
+                                            <td><button type="submit" id="PId{{r.Id}}" disabled (click)="editAppConfig('provider',r.Id,r.Value)" class="btn btn-primary">Save</button></td>
+                                          </tr>
+                                    </tbody>
+                                  </table>    
+                            </div>
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+             
+    </div>
+</div> -->
+
+

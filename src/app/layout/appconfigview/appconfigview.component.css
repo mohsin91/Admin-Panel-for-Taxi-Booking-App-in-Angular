@@ -1,0 +1,16 @@
+.nav>li>a {
+    display: inline;
+    cursor: pointer;
+}
+::placeholder {
+    color : grey;
+}
+.vieweye {
+    position: absolute;
+    top: 22px;
+    right: 14px;
+}
+
+td.posit {
+    position: relative;
+}

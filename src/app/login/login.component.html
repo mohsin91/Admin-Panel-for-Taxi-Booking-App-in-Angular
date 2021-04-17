@@ -1,0 +1,30 @@
+
+<!-- Default form login -->
+<div class="">
+    <div class="wrapper_inner">
+        <div class="container_wrapper">
+            <div class="inner_bg">
+                <h1>Welcome</h1>
+                <form class="form_inner" [formGroup]="loginForm" (ngSubmit)="login()" autocomplete="off">
+                    <input type="text" formControlName="email" placeholder="Email">
+                    <input type="password" formControlName="password" placeholder="Password">
+                    <button [disabled]="!loginForm.valid" type="submit" id="login-button">Sign in</button>
+                </form>
+            </div>
+        </div>
+
+        <ul class="bg-bubbles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</div>
+<!-- Default form login -->

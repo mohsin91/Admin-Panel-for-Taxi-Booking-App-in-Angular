@@ -1,0 +1,83 @@
+<div class="content">
+  <div class="container-fluid">
+    <div class="row">
+      <h4 class="headings_txt">City List View</h4>
+    </div>
+    <div class="row">
+      <div class="col-md-9">
+        <ul class="drop_ul">
+          <li>
+            <div class="dropdown">
+              <button class="btn btn-primary dropdown-toggle btn_color btn_pad" id="menu1" type="button"
+                data-toggle="dropdown">All
+                <span class="caret"></span></button>
+              <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                <!-- <li role="presentation"><a role="menuitem" tabindex="-1" href="#">HTML</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">CSS</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">JavaScript</a></li> -->
+              </ul>
+            </div>
+          </li>
+
+          <li class="icon_pos">
+            <form class="mailchimp subscribe-form" action="" novalidate="true">
+              <input type="email" name="EMAIL" id="subscriber-email" placeholder="Search">
+              <button type="submit" id="subscribe-button" class="tm-btn"><span>Search</span></button>
+
+              <!-- SUBSCRIPTION SUCCESSFUL OR ERROR MESSAGES -->
+
+            </form>
+          </li>
+          <li>
+            <a href="" class="reset_btn">RESET</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <div class="text-right">
+          <a routerLink="/cityAdd" class="add_btn">ADD</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="row second_row">
+      <!-- <div class="col-md-6">
+        <div class="inner_btn">
+          <a href="">Select Action</a>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="text-right export_btn">
+          <a href="">Export</a>
+        </div>
+      </div> -->
+    </div>
+  </div>
+</div>
+
+<div class="container card">
+<div class="table-responsive">
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">S.No</th>
+      <th scope="col">Country Name</th>
+      <th scope="col">State Name</th>
+      <th scope="col">City Name</th>
+      <th scope="col">Edit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let r of result; let i = index">
+      <th scope="row">{{((page * 10 ) + ( i + 1)) - 10}}</th>
+      <td>{{r.CountryName}}</td>
+      <td>{{r.StateName}}</td>
+      <td>{{r.CityName}}</td>
+      <td><a [routerLink]="['/cityEdit', r.Id]" class="btn btn-primary">Edit</a></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<ngb-pagination class="d-flex justify-content-center" [collectionSize]="pages" [(page)]="page" [maxSize]="5" (pageChange)="getCityView($event)" [rotate]="true" [boundaryLinks]="true"></ngb-pagination>
+</div>

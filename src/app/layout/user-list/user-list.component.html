@@ -1,0 +1,135 @@
+<div class="content">
+  <div class="">
+    <div class="">
+      <h4 class="headings_txt">Users List</h4>
+    </div>
+    <div class="">
+      <div class="col-md-9">
+        <ul class="drop_ul">
+          <li>
+            <div class="dropdown">
+              <button class="btn btn-primary dropdown-toggle btn_color btn_pad" id="menu1" type="button" data-toggle="dropdown">All
+                <span class="caret"></span></button>
+              <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                <!-- <li role="presentation"><a role="menuitem" tabindex="-1" href="#">HTML</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">CSS</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">JavaScript</a></li> -->
+              </ul>
+            </div>
+          </li>
+
+          <li class="icon_pos">
+            <form class="mailchimp subscribe-form" action="" novalidate="true">
+             <input type="email" name="email" [(ngModel)]="searchdata" id="subscriber-email" placeholder="Search" autocomplete="off">
+              <button type="submit" id="subscribe-button" (click)='findname(searchdata)' class="tm-btn"><span>Search</span></button>
+              <!-- <input type="text" [(ngModel)]="searchList" placeholder="Serach any fields"/> -->
+              <!-- SUBSCRIPTION SUCCESSFUL OR ERROR MESSAGES -->
+
+            </form>
+          </li>
+          <li>
+            <a (click)='reset()' class="reset_btn">RESET</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <div class="text-right">
+          <!-- <a href="" class="add_btn">ADD</a> -->
+        </div>
+      </div>
+    </div>
+
+    <div class="row second_row">
+      <div class="col-md-6">
+      </div>
+      <!-- <div class="col-md-6">
+            <div class="text-right export_btn">
+              <a href="">Export</a>
+            </div>
+          </div> -->
+    </div>
+  </div>
+</div>
+
+<div class="content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card full_bg">
+          <div class="our_miss">
+            <div class="table_align">
+              <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">S.No</th>
+                      <th scope="col" (click)="sortOrder('name.first_name',1)"><a  style="color:#9A9A9A;cursor: pointer;" [class]="sortClass1">First Name</a></th>
+                      <th scope="col" (click)="sortOrder('name.last_name',2)"><a  style="color:#9A9A9A;cursor: pointer;" [class]="sortClass2">Last Name</a></th>
+                      <th scope="col" (click)="sortOrder('email',3)"><a style="color:#9A9A9A;cursor: pointer;" [class]="sortClass3">Email Id</a></th>
+                      <th scope="col" (click)="sortOrder('phone.code',4)"><a style="color:#9A9A9A;cursor: pointer;" [class]="sortClass4">Code</a></th>
+                      <th scope="col" (click)="sortOrder('phone.number',5)"><a style="color:#9A9A9A;cursor: pointer;" [class]="sortClass5">Mobile</a></th>
+                      <th scope="col" (click)="sortOrder('status',6)"><a style="color:#9A9A9A;cursor: pointer;" [class]="sortClass6">Status</a></th>
+                      <th scope="col">Action</th>
+                      <th scope="col">Delete</th>
+                      <!-- <th scope="col">Action</th> -->
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let r of result; let i = index">
+                      <th scope="row">{{((page * 10 ) + ( i + 1)) - 10}}</th>
+                      <td>{{r?.name?.first_name || 'NA'}}</td>
+                      <td>{{r?.name?.last_name || 'NA'}}</td>
+                      <td *ngIf="r.status!='verified'" style="color: #f44336;">{{r?.email || 'NA'}}</td>
+                      <td *ngIf="r.status=='verified'" >{{r?.email || 'NA'}}</td>
+                      <td>{{r?.phone?.code || 'NA'}}</td>
+                      <td>{{r?.phone?.number || 'NA'}}</td>
+                      <!-- <td [ngSwitch]="r.Status">
+                        <span scope="row" *ngSwitchCase="'rejected'" style="color: #f44336;">{{r.status}}</span>
+                        <span scope="row" *ngSwitchCase="'pending'" style="color: #ffeb3b;">{{r.status}}</span>
+                        <span scope="row" *ngSwitchCase="'verified'" style="color: #0c5a19;">{{r.status}}</span>
+                      </td> -->
+                      <!-- <td>
+                          <span style="color: #0c5a19;">Active</span>
+                      </td> -->
+                      <td>{{r?.status || 'NA'}}</td>
+                      <td>
+                        <!-- <span *ngIf="r.Status === 'verified'; else elseBlock">
+                          <a (click)="providerUpdate(r.Id,'reject',r,i)" class="btn btn-danger">Reject</a>
+                        </span>
+                        <ng-template #elseBlock>
+                          <a (click)="providerUpdate(r.Id,'verified',r,i)" class="btn btn-primary">Approved</a> </ng-template>
+                        &nbsp;&nbsp; -->
+
+                        <a class="btn btn-primary btn-sm" [routerLink]="['/User', r._id]"><i class="fas fa-2x fa-eye"></i></a>
+                      </td>
+                      <td><button class="delete" (click)="deleteUser(i)"><i class="fa fa-trash"></i></button></td>
+                      <!-- <td>
+                  <div id="demo" class="whole_wid">
+                      <div class="wrapper_co">
+                          <div class="content_wrapper">
+                              <ul>
+                                  <a href="#"><li><i class="fas fa-trash-alt delete"></i></li></a>
+                                  <a [routerLink]="['/usersEdit', r.Id]"><li><i class="fas fa-marker edit "></i></li></a>
+                                  <a href="#"><li><i class="fas fa-eye view"></i></li></a>
+                                  <a href="#"><li><i class="fas fa-plus-circle add"></i></li></a>
+                                  
+                              </ul>
+                          </div>
+                          <div class="parent"><i class="fas fa-cog rot"></i></div>
+                      </div>
+                      </div>            
+              </td> -->
+                      <!-- <td><a [routerLink]="['/usersEdit', r.Id]" class="btn btn-primary">Edit</a></td> -->
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <ngb-pagination class="d-flex justify-content-center" [collectionSize]="pages" [(page)]="page" [maxSize]="5" (pageChange)="getUsersSerchPage($event)" [rotate]="true" [boundaryLinks]="true"></ngb-pagination>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

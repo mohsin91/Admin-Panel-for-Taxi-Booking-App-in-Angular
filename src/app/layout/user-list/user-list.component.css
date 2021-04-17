@@ -1,0 +1,84 @@
+.reset_btn {
+    cursor: pointer;
+}
+.delete {
+  background-color: #8FC93A;
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Darker background on mouse-over */
+.delete:hover {
+  background-color: #8FC93A;
+}
+
+.justify-content-center {
+    display: flex !important;
+    justify-content: center !important;
+    margin-left: 300px!important;
+}
+
+th a,
+td a { 
+	display: block;
+	width: 100%;
+}
+th a.sort-by { 
+	padding-right: 18px;
+	position: relative;
+}
+a.sort-by:before,
+a.sort-by:after {
+	border: 4px solid transparent;
+	content: "";
+	display: block;
+	height: 0;
+	right: 5px;
+	top: 50%;
+	position: absolute;
+    width: 0;
+  
+}
+a.sort-by:before {
+	border-bottom-color: #666;
+	margin-top: -9px;
+}
+a.sort-by:after {
+	border-top-color: #666;
+	margin-top: 1px;
+}
+
+/* a {
+    color: #9A9A9A !important;
+} */
+.headerSortDown:after,
+.headerSortUp:after {
+  content: ' ';
+  position: relative;
+  left: 2px;
+  border: 4px solid transparent;
+}
+
+.headerSortDown:after {
+  top: 10px;
+  border-top-color: #666;
+}
+
+.headerSortUp:after {
+  bottom: 15px;
+  border-bottom-color: #666;
+}
+
+.headerSortDown,
+.headerSortUp {
+  padding-right: 10px;
+}
+.selectedOption{
+    color:#8FC93A !important;
+}
+.unSelectedOptions{
+    color:#666 !important;
+}  

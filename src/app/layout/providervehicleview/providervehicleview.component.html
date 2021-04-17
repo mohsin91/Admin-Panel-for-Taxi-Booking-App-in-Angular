@@ -1,0 +1,448 @@
+<div class="content">
+  <div class="container-fluid">
+    <div class="row">
+      <h4 class="headings_txt">Provider Detail</h4>
+    </div>
+    <div class="row">
+      <div class="col-md-9">
+        <ul class="drop_ul">
+          <li>
+            <div class="dropdown">
+              <button class="btn btn-primary dropdown-toggle btn_color btn_pad" id="menu1" type="button" data-toggle="dropdown">All
+                <span class="caret"></span></button>
+              <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                <!-- <li role="presentation"><a role="menuitem" tabindex="-1" href="#">HTML</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">CSS</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">JavaScript</a></li> -->
+              </ul>
+            </div>
+          </li>
+
+          <li class="icon_pos">
+            <form class="mailchimp subscribe-form" action="" novalidate="true">
+              <input type="email" name="EMAIL" id="subscriber-email" placeholder="Search">
+              <button type="submit" id="subscribe-button" class="tm-btn"><span>Search</span></button>
+
+              <!-- SUBSCRIPTION SUCCESSFUL OR ERROR MESSAGES -->
+
+            </form>
+          </li>
+          <li>
+            <a href="" class="reset_btn">RESET</a>
+          </li>
+        </ul>
+      </div>
+      <!-- <div class="col-md-3">
+        <div class="text-right">
+          <a routerLink="/cancellationPolicyAdd" class="add_btn">ADD</a>
+        </div>
+      </div> -->
+    </div>
+
+
+    <div class="card">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card full_bg">
+            <div class="our_miss">
+              <ul class="nasv nav-pills">
+                <!-- (click)="getProfileView(paramsid)" -->
+                <li class="active full_div"><a data-toggle="pill" href="#homeProfile"><span>Profile</span> </a></li>
+                <li class="full_div"><a (click)="getprovidervehicle(paramsid)" data-toggle="pill" href="#menuVehicle2"><span>Vehicle</span> </a></li>
+                <li class="full_div"><a (click)="getprovidervehicledocuments(paramsid)" data-toggle="pill" href="#menuDocumnets3"><span>Documents</span> </a></li>
+              </ul>
+              <div class="tab-content">
+                <div id="homeProfile" class="tab-pane fade active in text_box">
+                  <div class="table-responsive">
+                    <div class="col-md-6">
+                      <div class="card">
+                        <h3 class="h3style"></h3>
+                        <div class="row">
+                          <div class="col-md-4">
+                              <!-- <div class='title'>
+                                  TitleText 1
+                                  <a class='delete' href="#">delete...</a>
+                              </div> -->
+                            <div class="img title">
+                              <div *ngIf="pImage != 'NULL' && pImage != null && pImage != ''; else imageelseBlock1">
+                                <img class="tes-img" [src]="pImage" alt="Provider face" onerror="this.onerror=null;this.src='assets/img/user.png';">
+                              </div>
+                              <ng-template #imageelseBlock1>
+                                <div>
+                                  <img class="tes-img" src="assets/img/user.png" alt="provider face">
+                                </div>
+                              </ng-template>
+                              <a style="color: red;" (click)="deleteSelfie()"><i class="fa fa-trash"></i></a>
+                             
+                            </div>
+                          </div>
+                          <div class="col-md-7">
+                            <div class="row">
+                              <p> <strong>First Name</strong> : {{pFirstName}} </p>
+                            </div>
+                            <div class="row">
+                              <p><strong>Last Name</strong> : {{pLastName}}</p>
+                            </div>
+                            <div class="row">
+                              <p><strong>Email Id</strong> : {{pEmail}}</p>
+                            </div>
+                            <div class="row">
+                              <p><strong>Mobile Number</strong> :{{pExt}} {{pMobile}}</p>
+                            </div>
+                            <div class="row">
+
+                              <p>
+                                <strong>Status</strong> :
+                                <span [ngSwitch]="pstatus">
+                                  <span scope="row" *ngSwitchCase="'rejected'" style="color: #f44336;">{{pstatus}}</span>
+                                  <span scope="row" *ngSwitchCase="'pending'" style="color: #ffeb3b;">{{pstatus}}</span>
+                                  <span scope="row" *ngSwitchCase="'approved'" style="color: #0c5a19;">{{pstatus}}</span>
+                                </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div id="menuVehicle2" class="tab-pane fade text_box">
+                  <div class="table-responsive">
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th scope="col">S.No</th>
+                          <th scope="col">Plate Number</th>
+                          <!-- <th scope="col">Image</th> -->
+                          <th scope="col">Brand Name</th>
+                          <th scope="col">Model Name</th>
+                          <th scope="col">Status</th>
+                          <th scope="col">Action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let r of result; let i = index">
+                          <th scope="row">{{( i + 1)}}</th>
+                          <td>{{r.VehicleNumber}}</td>
+                          <!-- <td>
+                            <div *ngIf="r.VehicleImage != 'NULL' && r.VehicleImage != null && r.VehicleImage != ''; else imageelseBlock2">
+                              <img [src]="r.VehicleImage" alt="Vehicle" height="50" width="50" onerror="this.onerror=null;this.src='assets/img/vehiclecar.png';">
+                            </div>
+                            <ng-template #imageelseBlock2>
+                              <div>
+                                <img src="assets/img/vehiclecar.png" alt="Vehicle" height="100" width="100">
+                              </div>
+                            </ng-template>
+                          </td> -->
+                          <td>{{r.VehicleBrandName}}</td>
+                          <td>{{r.VehicleModelName}}</td>
+                          <td [ngSwitch]="r.Status">
+                            <span scope="row" *ngSwitchCase="'rejected'" style="color: #f44336;">{{r.Status}}</span>
+                            <span scope="row" *ngSwitchCase="'pending'" style="color: #ffeb3b;">{{r.Status}}</span>
+                            <span scope="row" *ngSwitchCase="'approved'" style="color: #0c5a19;">{{r.Status}}</span>
+                          </td>
+                          <td>
+                            <!-- <span *ngIf="r.Status === 'pending'">
+                                <a (click)="providerUpdate(r.Id,'approved',r,i)" class="btn btn-primary">Approved</a>
+                              </span>
+                              <span *ngIf="r.Status === 'pending'">
+                                <a (click)="providerUpdate(r.Id,'rejected',r,i)" class="btn btn-danger">Reject</a>
+                              </span>
+
+                              <span *ngIf="r.Status === 'approved'; else elseBlock">
+                                <a (click)="providerUpdate(r.Id,'rejected',r,i)" class="btn btn-danger">Reject</a>
+                              </span>
+                              <ng-template #elseBlock>
+                                <a (click)="providerUpdate(r.Id,'approved',r,i)" class="btn btn-primary">Approved</a> 
+                              </ng-template>
+                              &nbsp;&nbsp; -->
+                            <i class="fas fa-eye fa-2x reset_btn" (click)="getprovidervehicledetails(r, i)" data-toggle="modal" data-target="#basicExampleModal"></i>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                </div>
+                <div id="menuDocumnets3" class="tab-pane fade text_box">
+                  <div class="table-responsive">
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th scope="col">S.No</th>
+                          <th scope="col">Name</th>
+                          <th scope="col">Documnets</th>
+                          <th scope="col">VehicleId</th>
+                          <th scope="col">Status</th>
+                          <th scope="col">Action</th>
+                          <th scope="col">Add Vehicle</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let d of docresult; let i = index">
+                          <th scope="row">{{( i + 1)}}</th>
+                          <td>{{d.Name}}</td>
+                          <td>
+                            <a href="{{d.File}}" target="_blank" class="btn waves-effect waves-light btn-small"><i class="fa fa-eye"></i>View</a>
+                          </td>
+                          <td>{{d.vehicleId}}</td>
+                          <td [ngSwitch]="d.Status">
+                            <span scope="row" *ngSwitchCase="'rejected'" style="color: #f44336;">{{d.Status}}</span>
+                            <span scope="row" *ngSwitchCase="'pending'" style="color: #ffeb3b;">{{d.Status}}</span>
+                            <span scope="row" *ngSwitchCase="'approved'" style="color: #0c5a19;">{{d.Status}}</span>
+                          </td>
+                          <td>
+
+                            <div class="row">
+                              <span *ngIf="d.Status === 'pending'">
+                                <a (click)="providerVehiclDocUpdate(d.Id,'approved',d,i)" class="btn btn-primary">Approved</a>
+                              </span>
+                              <span *ngIf="d.Status === 'pending'">
+                                <a (click)="providerVehiclDocUpdate(d.Id,'rejected',d,i)" class="btn btn-danger">Reject</a>
+                              </span>
+
+                              <span *ngIf="d.Status === 'approved';">
+                                <a (click)="providerVehiclDocUpdate(d.Id,'rejected',data-toggle,i)" class="btn btn-danger">Reject</a>
+                              </span>
+                              <span *ngIf="d.Status === 'rejected';">
+                                <a (click)="providerVehiclDocUpdate(d.Id,'approved',d,i)" class="btn btn-primary">Approved</a>
+                              </span>
+                            </div>
+                          </td>
+                          <td>
+                            <span *ngIf="d.vehicleId === null">
+                            <a  class="btn btn-primary a-btn-slide-text" (click)="openVehicleForm()">
+                              <span class="" aria-hidden="true"></span>
+                              <span><strong>Add Vehicle</strong></span>            
+                          </a>
+                        </span>
+                          </td>
+                          
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <!-- <ngb-pagination [collectionSize]="pages" [(page)]="page" [maxSize]="5"
+                    (pageChange)="getCancellationPolicyView('provider',$event)" [rotate]="true" [boundaryLinks]="true">
+                  </ngb-pagination> -->
+                </div>
+                <div class="modal fade" id="addVehicle" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header text-center">
+                      <h4 class="modal-title w-100 font-weight-bold">Add Vehicle</h4>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body mx-3">
+                      <div class="md-form mb-5">
+                        <i class="prefix"></i>
+                        <div class="d-inline-block">
+                        <select class="custom-select col-md-12 dropdown-custom" [(ngModel)]="newVehicle.Brand" (change)="getBrandModel()">
+                            <option  *ngFor="let p of vehiclebrandlist"  [value]="p.Id">{{p.BrandName}}</option>
+                        </select>
+                      </div>
+                        <label data-error="wrong" data-success="right" >Brand</label>
+                      </div>
+              
+                      <div class="md-form mb-4">
+                        <i class="prefix black-text"></i>
+                        <div class="d-inline-block">
+                            <select class="custom-select col-md-12 dropdown-custom" [(ngModel)]="newVehicle.Model" >
+                                <option  *ngFor="let p of vehiclemodellist"  [value]="p.Id">{{p.ModelName}}</option>
+                            </select>
+                          </div>
+                        <label data-error="wrong" data-success="right" >Modal</label>
+                      </div>
+                      <div class="md-form mb-4">
+                        <i class=" prefix black-text"></i>
+                        <input type="number"  class="form-control validate" [(ngModel)]="newVehicle.Seats">
+                        <label data-error="wrong" data-success="right" >No of Seats</label>
+                      </div>
+                      <div class="md-form mb-4">
+                        <i class=" prefix black-text"></i>
+                        <input type="number"  class="form-control validate" [(ngModel)]="newVehicle.year">
+                        <label data-error="wrong" data-success="right" >Year</label>
+                      </div>
+                      <div class="md-form mb-4">
+                        <i class=" prefix black-text"></i>
+                        <input type="text"  class="form-control validate" [(ngModel)]="newVehicle.Color">
+                        <label data-error="wrong" data-success="right" >Color</label>
+                      </div>
+                      <div class="md-form mb-4">
+                        <i class=" prefix black-text"></i>
+                        <input type="text"  class="form-control validate" [(ngModel)]="newVehicle.Car_Number">
+                        <label data-error="wrong" data-success="right" >Car Number</label>
+                      </div>
+                      <div class="md-form mb-4">
+                        <i class=" prefix black-text"></i>
+                        <div class="d-inline-block">
+                            <select class="custom-select col-md-12 dropdown-custom" [(ngModel)]="newVehicle.Service_Type" >
+                                <option  *ngFor="let p of rideVehicleType"  [value]="p.Id">{{p.Name}}</option>
+                            </select>
+                          </div>
+                        <label data-error="wrong" data-success="right" >Service Type</label>
+                      </div>
+                      <div class="md-form mb-4">
+                          <i class=" prefix black-text"></i>
+                          <div class="d-inline-block">
+                              <select class="custom-select col-md-12 dropdown-custom" [(ngModel)]="newVehicle.CategoryId" >
+                                  <option  *ngFor="let p of vehicleCategories"  [value]="p.Id">{{p.CategName}}</option>
+                              </select>
+                            </div>
+                          <label data-error="wrong" data-success="right" >Category Type</label>
+                        </div>
+              
+                    </div>
+                    <div class="modal-footer d-flex justify-content-center">
+                      <button class="btn btn-primary" (click)="saveProviderVehicle()">Submit</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+                <!-- modal start  -->
+                <!-- Button trigger modal -->
+                <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#basicExampleModal">
+  Launch demo modal
+</button> -->
+
+                <!-- Modal -->
+                <div class="modal fade" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Vehicle Details</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <div class="card">
+                          <div class="row">
+                            <div class="col-md-12">
+                              <div class="card full_bg">
+                                <div class="our_miss">
+                                  <ul class="nasv nav-pills">
+                                    <!-- (click)="getProfileView(paramsid)" -->
+                                    <li class="active full_div"><a data-toggle="pill" href="#vehiclehome"><span>Vehicle Info</span> </a></li>
+                                    <li class="full_div"><a data-toggle="pill" (click)="getprovidervehicledocuments(paramsid)" href="#vehiclemenu3"><span>Documnets</span> </a></li>
+                                  </ul>
+                                  <div class="tab-content">
+                                    <div id="vehiclehome" class="tab-pane fade active in text_box">
+                                      <div class="card">
+                                        <h3 class="h3style"></h3>
+                                        <div class="row">
+                                          <div class="col-md-4">
+                                            <div class="img">
+                                              <div *ngIf="VVehicleImage != 'NULL' && VVehicleImage != null && VVehicleImage != ''; else imageelseBlock3">
+                                                <img class="tes-img" [src]="VVehicleImage" alt="vehicle car" onerror="this.onerror=null;this.src='assets/img/vehiclecar.png';">
+                                              </div>
+                                              <ng-template #imageelseBlock3>
+                                                <div>
+                                                  <img class="tes-img" src="assets/img/vehiclecar.png" alt="vehicle car" onerror="this.onerror=null;this.src='assets/img/vehiclecar.png';">
+                                                </div>
+                                              </ng-template>
+                                            </div>
+                                          </div>
+                                          <div class="col-md-7">
+                                            <div class="row">
+                                              <p><strong>RideVehicle TypeName</strong> : {{RideVehicleTypeName}}</p>
+                                            </div>
+                                            <div class="row">
+                                              <p> <strong>Plate Number</strong> : {{VVehicleNumber}} </p>
+                                            </div>
+                                            <div class="row">
+                                              <p><strong>Brand Name</strong> : {{VVehicleBrandName}}</p>
+                                            </div>
+                                            <div class="row">
+                                              <p><strong>Model Name</strong> : {{VVehicleModelName}}</p>
+                                            </div>
+                                            <div class="row">
+                                              <p><strong>Color</strong> : {{VColor}}</p>
+                                            </div>
+                                            <div class="row">
+                                              <p><strong>Status</strong> :
+                                                <span [ngSwitch]="VStatus">
+                                                  <span scope="row" *ngSwitchCase="'rejected'" style="color: #f44336;">{{VStatus}}</span>
+                                                  <span scope="row" *ngSwitchCase="'pending'" style="color: #ffeb3b;">{{VStatus}}</span>
+                                                  <span scope="row" *ngSwitchCase="'approved'" style="color: #0c5a19;">{{VStatus}}</span>
+                                                </span>
+                                              </p>
+                                            </div>
+                                            <div class="row">
+                                              <span *ngIf="VStatus === 'pending'">
+                                                <a (click)="providerUpdate(VId,'approved',Vr,Vi)" class="btn btn-primary">Approved</a>
+                                              </span>
+                                              <span *ngIf="VStatus === 'pending'">
+                                                <a (click)="providerUpdate(VId,'rejected',Vr,Vi)" class="btn btn-danger">Reject</a>
+                                              </span>
+
+                                              <span *ngIf="VStatus === 'approved';">
+                                                <a (click)="providerUpdate(VId,'rejected',Vr,Vi)" class="btn btn-danger">Reject</a>
+                                              </span>
+                                              <span *ngIf="VStatus === 'rejected';">
+                                                <a (click)="providerUpdate(VId,'approved',Vr,Vi)" class="btn btn-primary">Approved</a>
+                                              </span>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div id="vehiclemenu3" class="tab-pane fade in text_box">
+                                      <div class="table-responsive">
+                                        <table class="table">
+                                          <thead>
+                                            <tr>
+                                              <th scope="col">S.No</th>
+                                              <th scope="col">Name</th>
+                                              <th scope="col">Documnets</th>
+                                              <!-- <th scope="col">Edit</th> -->
+                                            </tr>
+                                          </thead>
+                                          <tbody>
+                                            <tr *ngFor="let d of docresult; let i = index">
+                                              <th scope="row">{{( i + 1)}}</th>
+                                              <td>{{d.Name}}</td>
+                                              <td>
+                                                <a href="{{d.File}}" target="_blank" class="btn waves-effect waves-light btn-small"><i class="fa fa-eye"></i>View</a>
+                                              </td>
+                                              <!-- <td><a [routerLink]="['/cancellationPolicyEdit', r.Id]" class="btn btn-primary">Edit</a></td> -->
+                                            </tr>
+                                          </tbody>
+                                        </table>
+                                      </div>
+
+
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- modal end -->
+
+
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

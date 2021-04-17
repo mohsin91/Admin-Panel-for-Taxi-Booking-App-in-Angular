@@ -1,0 +1,322 @@
+<div class="sidebar">
+
+  <!--
+
+      Tip 1: you can change the color of the sidebar using: data-color="blue | azure | green | orange | red | purple"
+      Tip 2: you can also add an image using data-image tag
+
+  -->
+
+    <div class="sidebar-wrapper nav">
+              <ul class="side_nav" id="backColor">
+              <li class="sidebarColor" routerLinkActive="active" id="menu1">
+                  <a routerLink="/dashboard">
+                      <i class="fas fa-desktop"></i>
+                      <p>Dashboard</p>
+                  </a>
+              </li>
+              <li class="sidebarColor" id="menu3">
+                <a routerLink="/Providers" class="sidebarColor">
+                    <i class="fas fa-user-cog mr-3"></i>
+                    <p>Providers</p>
+                </a>
+            </li>
+             
+            <li class="sidebarColor" routerLinkActive="active" id="menu4">
+                <a routerLink="/Users" class="sidebarColor">
+                    <i class="fas fa-user-alt mr-3"></i>
+                    <p>Users</p>
+                </a>
+            </li>
+            <li class="sidebarColor" routerLinkActive="active" id="menu6">
+                <a data-toggle="collapse" href="#menudocument" class="collapsed" aria-expanded="false">
+                    <i class="fas fa-file-alt mr-3"></i>
+                    <p>Document <i class="fas fa-caret-down down-alone"></i></p>
+                </a>
+                <div class="collapse over" id="menudocument" aria-expanded="false" style="height: 0px;">
+                    <ul class="sub_menu_bg">
+                        <li class="sidebarColor" routerLinkActive="active">
+                            <a routerLink="/doctypeView">
+                                <p>Document Type</p>
+                            </a>
+                        </li>
+                        <li class="sidebarColor" routerLinkActive="active">
+                            <a routerLink="/doctypeView">
+                                <p>Vehicle Document</p>
+                            </a>
+                        </li>
+                        <li class="sidebarColor" routerLinkActive="active">
+                            <a routerLink="/doctypeView">
+                                <p>Provider Document</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="sidebarColor" routerLinkActive="active" id="menu5">
+                <a data-toggle="collapse" href="#vehicle1" class="collapsed" aria-expanded="false">
+                    <i class="fas fa-car-side mr-3"></i>
+                    <p>Vehicle <i class="fas fa-caret-down down-alone has_tab"></i></p>
+                </a>
+                <div class="collapse over" id="vehicle1" aria-expanded="false" style="height: 0px;">
+                    <ul class="sub_menu_bg">
+                        <li class="sidebarColor" routerLinkActive="active">
+                            <a routerLink="/vehicleBrandView">
+                                <p>Vehicle Brand</p>
+                            </a>
+                        </li>
+                        <li class="sidebarColor" routerLinkActive="active">
+                            <a routerLink="/vehicleModelView">
+                                <p>Vehicle Model</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <!-- <li class="sidebarColor" routerLinkActive="active" id="menu5">
+                <a data-toggle="collpapse" href="#vehicle" class="collapsed" aria-expanded="false">
+                    <i class="fas fa-car-side mr-3"></i>
+                    <p>Vehicle <i class="fas fa-caret-down down-alone has_tab"></i></p>
+                </a>
+                  <div class="collapse over navhide" id="vehicle" aria-expanded="false" style="height: 0px;">
+                      <ul class="sub_menu_bg">
+                          <li class="sidebarColor" routerLinkActive="active">
+                              <a routerLink="/vehicleBrandView">
+                                  <p>Vehicle Brand</p>
+                              </a>
+                          </li>
+                          <li class="sidebarColor" routerLinkActive="active">
+                              <a routerLink="/vehicleModelView">
+                                  <p>Vehicle Model</p>
+                              </a>
+                          </li>
+                      </ul>
+                  </div>
+            </li> -->
+            
+            <li class="sidebarColor" routerLinkActive="active" id="menu7">
+                <a href="#" routerLink="/rideVehicletypeView">
+                    <i class="fab fa-servicestack mr-3"></i>
+                    <p>Service Type</p>
+                </a>
+            </li>
+            <li class="sidebarColor" routerLinkActive="active" id="menu10">
+                <a href="#" routerLink="/bookings">
+                    <i class="fas fa-money-check mr-3"></i>
+                    <p>Bookings</p>
+                </a>
+            </li>
+            <li class="sidebarColor" routerLinkActive="active" id="menu11">
+                <a href="#" routerLink="/emailTemplateView">
+                    <i class="fa fa-envelope mr-3"></i>
+                    <p>Email Template</p>
+                </a>
+            </li>
+            <li class="sidebarColor" routerLinkActive="active" id="menu12">
+                <a href="#" routerLink="/cancellationPolicyView">
+                      <i class="fas fa-file-excel mr-3"></i>
+                      <p>Cancel Policy</p>
+                  </a>
+              </li>
+              <li class="sidebarColor" routerLinkActive="active" id="menu14">
+                <a href="#" routerLink="/godsView">
+                      <i class="fas fa-eye mr-3"></i>
+                      <p>Gods Eye</p>
+                  </a>
+              </li>
+              <li class="sidebarColor" routerLinkActive="active" id="menu13">
+                <a data-toggle="collapse" href="#appsett" class="collapsed panel-title" aria-expanded="false">
+                    <i class="fas fa-mobile-alt mr-3"></i>
+                    <p>App Settings <i class="fas fa-caret-down down-alone"></i></p>
+                </a>
+                  <div class="collapse over" id="appsett" aria-expanded="false" style="height: 0px;">
+                      <ul class="sub_menu_bg">
+                          <li class="sidebarColor" routerLinkActive="active">
+                              <a routerLink="/appConfigView">
+                                  <p>App Config</p>
+                              </a>
+                          </li>
+                          <li class="sidebarColor" routerLinkActive="active">
+                              <a routerLink="/appSliderView">
+                                  <p>App Slider</p>
+                              </a>
+                          </li>
+                      </ul>
+                  </div>
+            </li>
+            <li class="sidebarColor" routerLinkActive="active" id="menu9">
+                <a href="#" routerLink="/pushNotificationView">
+                    <i class="fas fa-bell mr-3"></i>
+                    <p>Push Notification</p>
+                </a>
+            </li>
+            <li class="sidebarColor" routerLinkActive="active" id="menu8">
+                <a href="#" routerLink="/manualBook">
+                    <i class="fas fa-calendar-alt mr-3"></i>
+                    <p>Manual Booking</p>
+                </a>
+            </li>
+            <li class="sidebarColor" routerLinkActive="active" id="menu18">
+                <a href="#" routerLink="/billing">
+                    <i class="fas fa-money-bill-alt"></i>
+                    <p>Biiling Panel</p>
+                </a>
+            </li>
+            <li class="sidebarColor" routerLinkActive="active" id="menu19">
+                <a href="#" routerLink="/companyprofile">
+                    <i class="fas fa-id-badge"></i>
+                    <p>Company Profile</p>
+                </a>
+            </li>
+            <li class="sidebarColor" routerLinkActive="active" id="menu20">
+                <a href="#" routerLink="/rental">
+                    <i class="fas fa-hand-peace"></i>
+                    <p>Rental/Outstation Package</p>
+                </a>
+            </li>
+            <li class="sidebarColor" routerLinkActive="active" id="menu21">
+                <a href="#" routerLink="/ridelaterbook">
+                    <i class="fas fa-taxi"></i>
+                    <p>RideLater Booking</p>
+                </a>
+            </li>
+            <li class="sidebarColor" routerLinkActive="active" id="menu22">
+                <a href="#" routerLink="/bookingheatmap">
+                    <i class="fas fa-atlas"></i>
+                    <p>Booking Heat map</p>
+                </a>
+            </li>
+            <li class="sidebarColor" routerLinkActive="active" id="menu23">
+                <a href="#" routerLink="/reviewmanagement">
+                    <i class="fab fa-rev"></i>
+                    <p>Review management</p>
+                </a>
+            </li>
+            <li class="sidebarColor" routerLinkActive="active" id="menu24">
+                <a href="#" routerLink="/bannerads">
+                    <i class="fab fa-adversal"></i>
+                    <p>Banner Advertisement</p>
+                </a>
+            </li>
+            <li class="sidebarColor" routerLinkActive="active" id="menu25">
+                <a href="#" routerLink="/providercancellation">
+                    <i class="far fa-window-close"></i>
+                    <p>Provider Cancellation Decline report</p>
+                </a>
+            </li>
+            <li class="sidebarColor" routerLinkActive="active" id="menu26">
+                <a href="#" routerLink="/servicelocation">
+                    <i class="fas fa-compass"></i>
+                    <p>Service Location Availability</p>
+                </a>
+            </li>
+            <li class="sidebarColor" routerLinkActive="active" id="menu27">
+                <a href="#" routerLink="/edithomepage">
+                    <i class="far fa-edit"></i>
+                    <p>Edit Homepage</p>
+                </a>
+            </li>
+            <li class="sidebarColor" routerLinkActive="active" id="menu28">
+                <a href="#" routerLink="/latestnewsupdate">
+                    <i class="fas fa-pen-square"></i>
+                    <p>Latest News Update</p>
+                </a>
+            </li>
+            <li class="sidebarColor" routerLinkActive="active" id="menu29">
+                <a href="#" routerLink="/newslettersubs">
+                    <i class="far fa-newspaper"></i>
+                    <p>News Letter Subscription</p>
+                </a>
+            </li>
+            <li class="sidebarColor" routerLinkActive="active" id="menu30">
+                <a href="#" routerLink="/faqs">
+                    <i class="far fa-question-circle"></i>
+                    <p>FAQ's</p>
+                </a>
+            </li>
+            <li class="sidebarColor" routerLinkActive="active" id="menu31">
+                <a href="#" routerLink="/dbbackup">
+                    <i class="fas fa-database"></i>
+                    <p>DB Backup</p>
+                </a>
+            </li>
+            <li class="sidebarColor" routerLinkActive="active" id="menu32">
+                <a href="#" routerLink="/systemdia">
+                    <i class="fas fa-diagnoses"></i>
+                    <p>System Diagonstic</p>
+                </a>
+            </li>
+            <li class="sidebarColor" routerLinkActive="active" id="menu33">
+                <a href="#" routerLink="/locationbased">
+                    <i class="fas fa-search-location"></i>
+                    <p>Location Based</p>
+                </a>
+            </li>
+            <li class="sidebarColor" routerLinkActive="active" id="menu34">
+                <a href="#" routerLink="/surgepricemanage">
+                    <i class="fas fa-poll-h"></i>
+                    <p>Surge Price Manage</p>
+                </a>
+            </li>
+
+            <li class="sidebarColor" id="menu15">
+                <a href="#" routerLink="/promoCodes">
+                    <i class="fas fa-bullhorn mr-3"></i>
+                    <p>Promo Code</p>
+                </a>
+            </li>
+            <li class="sidebarColor" routerLinkActive="active" id="menu35">
+                <a href="#" routerLink="/staticPagesView">
+                    <i class="fab fa-html5 mr-3"></i>
+                    <p>Static Pages</p>
+                </a>
+            </li>
+            <li class="sidebarColor" routerLinkActive="active panel" id="menu2">
+                    <a data-toggle="collapse" href="#usermenu" class="collapsed panel-title sidecomm" aria-expanded="false">
+                      <i class="fas fa-map-marker-alt mr-3"></i>                        
+                      <p>Localize <i class="fas fa-caret-down down-alone tap_icon"></i></p>
+                    </a>
+                    <div class="collapse over navhide" id="usermenu" aria-expanded="false" style="height: 0px;">
+                        <ul class="sub_menu_bg">
+                                <li class="sidebarColor" routerLinkActive="active">
+                                        <a routerLink="/countryView">
+                                            <p>Country</p>
+                                        </a>
+                                    </li>
+                                    <li class="sidebarColor" routerLinkActive="active">
+                                        <a routerLink="/stateView">
+                                            <p>State</p>
+                                        </a>
+                                    </li>
+                                    <li class="sidebarColor" routerLinkActive="active">
+                                        <a routerLink="/cityView" class="">
+                                            <p>City</p>
+                                        </a>
+                                    </li>
+                        </ul>
+                    </div>
+                </li>                                                                                      
+         
+              <li class="sidebarColor" id="menu11">
+                  <a href="#" routerLink="/reports">
+                      <i class="fas fa-chart-line mr-3"></i>
+                      <p>Reports</p>
+                  </a>
+              </li>
+              <li class="sidebarColor" id="menu12" routerLinkActive="active">
+                <a href="#" routerLink="/peekCharges">
+                    <i class="fab fa-think-peaks"></i>
+                    <p>PeekCharges</p>
+                </a>
+            </li>
+            <li class="sidebarColor" id="menu12" routerLinkActive="active">
+                <a href="#" routerLink="/withDrawlRequest">
+                    <i class="fas fa-dollar-sign"></i>
+                    <p>Withdrawl Request</p>
+                </a>
+            </li>
+            
+
+          </ul>
+    </div>
+  </div>

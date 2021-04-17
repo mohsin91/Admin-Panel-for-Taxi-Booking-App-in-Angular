@@ -1,0 +1,169 @@
+<div class="content">
+  <div class="container">
+    <div class="row">
+      <h4 class="headings_txt">Bookings List View</h4>
+    </div>
+    <div class="card1">
+      <div class="table-responsive">
+        <div class="row">
+          <div class="row">
+          <div class="col-md-6">
+            <div class="card">
+            <h3 class="h3style">User Details</h3>
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="img">
+                    <div *ngIf="uImage != 'NULL' && uImage != null && uImage != ''; else imageelseBlock">
+                      <img class="tes-img" [src]="uImage" alt="User face">
+                    </div>
+                    <ng-template #imageelseBlock>
+                      <div>
+                        <img class="tes-img" src="assets/img/user.png" alt="User face">
+                      </div>
+                    </ng-template>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="row">
+                    <p> <strong>First Name</strong> : {{uFirstName}} </p>
+                  </div>
+                  <div class="row">
+                    <p><strong>Last Name</strong> : {{uLastName}}</p>
+                  </div>
+                  <div class="row">
+                    <p><strong>Email Id</strong> : {{uEmail}}</p>
+                  </div>
+                  <div class="row">
+                    <p><strong>Mobile Number</strong> : {{uMobile}}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card">
+            <h3 class="h3style">Provider Details</h3>
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="img">
+                    <div *ngIf="pImage != 'NULL' && pImage != null && pImage != ''; else imageelseBlock1">
+                      <img class="tes-img" [src]="pImage" alt="Provider face">
+                    </div>
+                    <ng-template #imageelseBlock1>
+                      <div>
+                        <img class="tes-img" src="assets/img/user.png" alt="User face">
+                      </div>
+                    </ng-template>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="row">
+                    <p> <strong>First Name</strong> : {{pFirstName}} </p>
+                  </div>
+                  <div class="row">
+                    <p><strong>Last Name</strong> : {{pLastName}}</p>
+                  </div>
+                  <div class="row">
+                    <p><strong>Email Id</strong> : {{pEmail}}</p>
+                  </div>
+                  <div class="row">
+                    <p><strong>Mobile Number</strong> : {{pMobile}}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+          <div class="row">
+              <div class="col-md-6">
+                <div class="card">
+                <h3 class="h3style">Trip Details</h3>
+    
+                <div class="table-responsive">
+                  <table class="table borderless">
+                    <tbody>
+                      <tr>
+                        <th scope="col">Name </th>
+                        <td>{{Name}}</td>
+                      </tr>
+                      <tr>
+                        <th scope="col">Booking ID </th>
+                        <td>{{Id}}</td>
+                      </tr>
+                      <tr>
+                        <th scope="col">From </th>
+                        <td>{{FromLocation}}</td>
+                      </tr>
+                      <tr>
+                        <th scope="col">To </th>
+                        <td>{{ToLocation}}</td>
+                      </tr>
+                      <tr>
+                        <th scope="col">ContactNo</th>
+                        <td>{{ContactNo}}</td>
+                      </tr>
+                      <tr>
+                        <th scope="col">CancelledFor</th>
+                        <td>{{CancelledFor}}</td>
+                      </tr>
+                      <tr>
+                        <th scope="col">Distance</th>
+                        <td>{{Distance}}</td>
+                      </tr>
+                      <tr>
+                        <th scope="col">Tax</th>
+                        <td>{{Tax}}</td>
+                      </tr>
+                      <tr>
+                        <th scope="col">WaitingCharges</th>
+                        <td>{{WaitingCharges}}</td>
+                      </tr>
+                      <tr>
+                        <th scope="col">Description</th>
+                        <td>{{Description}}</td>
+                      </tr>
+                      <tr>
+                        <th scope="col">CountryName</th>
+                        <td>{{CountryName}}</td>
+                      </tr>
+                      <tr>
+                        <th scope="col">Payment Mode</th>
+                        <td>{{PaymentMode}}</td>
+                      </tr>
+                      <tr>
+                        <th scope="col">Estimation </th>
+                        <td>{{CurrencyType}}{{Estimation}}</td>
+                      </tr>
+                      <tr>
+                        <th scope="col">Total </th>
+                        <td>{{TotalAmount}}</td>
+                      </tr>
+                      <tr>
+                        <th scope="col">Status</th>
+                        <td>{{Status}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                </div>
+              </div>
+    
+              <div class="col-md-6">
+                <div class="card">
+                <agm-map [zoom]="15">
+                  <agm-marker [latitude]="latitude" [longitude]="longitude" [iconUrl]="icon" [label]="''">
+                    <agm-info-window>{{pFirstName}} {{pLastName}}</agm-info-window>
+                  </agm-marker>
+                  <agm-direction [origin]="origin" [destination]="destination">
+                  </agm-direction>
+                </agm-map>
+                </div>
+              </div>
+          </div>
+        </div>
+    
+    
+      </div>
+    </div>
+  </div>
+</div>

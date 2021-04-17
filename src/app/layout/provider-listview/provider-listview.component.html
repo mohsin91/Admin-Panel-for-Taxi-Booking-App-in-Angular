@@ -1,0 +1,261 @@
+<div class="content">
+  <div class="container">
+    <div class="row">
+      <h4 class="headings_txt">Providers View</h4>
+    </div>
+    <div class="row">
+      <div class="col-md-9">
+        <ul class="drop_ul">
+          <li>
+            <div class="dropdown">
+              <button class="btn btn-primary dropdown-toggle btn_color btn_pad" id="menu1" type="button"
+                data-toggle="dropdown">All
+                <span class="caret"></span></button>
+              <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                <!-- <li role="presentation"><a role="menuitem" tabindex="-1" href="#">HTML</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">CSS</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">JavaScript</a></li> -->
+              </ul>
+            </div>
+          </li>
+
+          <li class="icon_pos">
+            <form class="mailchimp subscribe-form" action="" novalidate="true">
+              <input type="email" name="EMAIL" id="subscriber-email" placeholder="Search">
+              <button type="submit" id="subscribe-button" class="tm-btn"><span>Search</span></button>
+
+              <!-- SUBSCRIPTION SUCCESSFUL OR ERROR MESSAGES -->
+
+            </form>
+          </li>
+          <li>
+            <a href="" class="reset_btn">RESET</a>
+          </li>
+        </ul>
+      </div>
+      <!-- <div class="col-md-3">
+        <div class="text-right">
+          <a href="" class="add_btn">ADD</a>
+        </div>
+      </div> -->
+    </div>
+
+    <div class="row second_row">
+      <!-- <div class="col-md-6">
+        <div class="inner_btn">
+          <a href="">Select Action</a>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="text-right export_btn">
+          <a href="">Export</a>
+        </div>
+      </div> -->
+    </div>
+    <div class="row pull-right">
+      <span> <a class="btn btn-primary">Approve</a> </span>
+      &ensp;&ensp;&ensp;
+        <span> <a class="btn btn-danger">Reject</a> </span>        
+    </div>
+  </div>
+</div>
+
+<div class="content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card full_bg">
+          <div class="our_miss">
+            <ul class="nasv nav-pills">
+              <li class="active full_div"><a data-toggle="pill" href="#home"><span>Profile</span> </a></li>
+              <li class="full_div"><a data-toggle="pill" href="#menu2"><span>Documents</span></a></li>
+              <li class="full_div"><a data-toggle="pill" href="#menu3"><span>Vehicle Documents</span> </a></li>
+              <li class="full_div"><a data-toggle="pill" href="#menu4"><span>Bank Details</span> </a></li>
+            </ul>
+            <div class="tab-content">
+              <div id="home" class="tab-pane fade active in text_box">
+                <!-- profile start -->
+            <div class="row">
+              <div class="col-md-6">
+                <label for="exampleFormControlFile1">Profile Image</label>
+                      <span class="form-control" *ngIf=" image != ''; else imageelseBlock">
+                        <img [src]="image" alt="Smiley face" height="50" width="50" onerror="this.onerror=null;this.src='assets/img/user.png';">
+                      </span>
+                      <ng-template class="form-control" #imageelseBlock>
+                      <span class="img">
+                          <img src="assets/img/user.png" height="50" width="50" alt="user face" onerror="this.onerror=null;this.src='assets/img/user.png';" />
+                      </span>
+                      </ng-template>
+              </div>
+              <div class="col-md-6">
+                <label for="exampleFormControlFile1">First Name</label>
+                      <span class="form-control">{{fn}}</span>
+              </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <label for="exampleFormControlFile1">Last Name</label>
+                      <span class="form-control">{{ln}}</span>
+                </div>                
+                <div class="col-md-6">
+                  <label for="exampleFormControlFile1">Email</label>
+                      <span class="form-control">{{email}}</span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <label for="exampleFormControlFile1">Extension Code</label>
+                      <span class="form-control">{{extcode}}</span>
+                </div>
+                <div class="col-md-6">
+                  <label for="exampleFormControlFile1">Country Name</label>
+                      <span class="form-control">{{countryid}}</span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <label for="exampleFormControlFile1">App Version</label>
+                      <span class="form-control">{{appversion}}</span>
+                </div>
+                <div class="col-md-6">
+                  <label for="exampleFormControlFile1">Mobile</label>
+                      <span class="form-control">{{mobile}}</span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <label for="exampleFormControlFile1">Email Verified</label>
+                  <span class="form-control">{{isemailverified}}</span>
+                </div>
+                <div class="col-md-6">
+                  <label for="exampleFormControlFile1">Mobile Verified</label>
+                  <span class="form-control">{{ismobileverified}}</span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <label for="exampleFormControlFile1">Mobile Brand </label>
+                  <span class="form-control">{{mobilebrand}}</span>
+                </div>
+                <div class="col-md-6">
+                  <label for="exampleFormControlFile1">Mobile Model</label>
+                  <span class="form-control">{{mobilemodel}}</span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <label for="exampleFormControlFile1">Mobile Os</label>
+                  <span class="form-control">{{os}}</span>
+                </div>
+                <div class="col-md-6">
+                  <label for="exampleFormControlFile1">Os Version</label>
+                  <span class="form-control">{{osversion}}</span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <label for="exampleFormControlFile1">Status</label>
+                  <span class="form-control">{{status}}</span>
+                </div>
+                <div class="col-md-6">
+                  <label for="exampleFormControlFile1">Active</label>
+                  <span class="form-control">{{isactive}}</span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <label for="exampleFormControlFile1">Created At</label>
+                  <span class="form-control">{{createat}}</span>
+                </div>
+              </div>
+              <!-- profile end -->
+              </div>
+              <div id="menu2" class="tab-pane fade text_box">
+                <div class="table_align">
+                  <div class="table-responsive">
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th scope="col">Name</th>
+                          <th scope="col">Value</th>
+                          <th scope="col">Image</th>
+                          <th scope="col">Status</th>
+                          <th scope="col">Accepted</th>
+                          <th scope="col">Update</th>
+                        </tr>
+                        </thead>
+                      <tbody>
+                        <tr *ngFor="let r of providerDoc; let i = index">
+                          <td>{{r.Name}}</td>
+                          <td> <input type="text" class="form-control" [(ngModel)]="r.Value"  id="inputEmail4" placeholder="Document value "></td>
+                          <td> <span *ngIf="r.Doctype === 'photo' && r.file != ''; else elseBlock">
+                          <img [src]="r.file" alt="Smiley face" height="50" width="50">
+                          <a class="lightbox" href="#dog">
+                            <img [src]="r.file" height="50" width="50" alt="user face" />
+                          </a>
+                          <div class="lightbox-target" id="dog">
+                            <img [src]="r.file" alt="user face" />
+                            <a class="lightbox-close"></a>
+                          </div>
+                          </span> 
+                          <ng-template #elseBlock>
+                            <a class="lightbox" href="#dog">
+                              <img src="assets/img/user.png" height="50" width="50" alt="user face" onerror="this.onerror=null;this.src='assets/img/user.png';"/>
+                            </a>
+                            <div class="lightbox-target" id="dog">
+                              <img src="assets/img/user.png" alt="user face" onerror="this.onerror=null;this.src='assets/img/user.png';"/>
+                              <a class="lightbox-close"></a>
+                            </div>
+                         </ng-template>
+                         </td>
+                         <td>{{r.Status}}</td>
+                          <td><span *ngIf="r.Status === 'verified'; else elseSBlock">
+                      <a class="btn btn-danger" (click)="providerdocstatus(r.id,{Status : 'rejected'})">Reject</a>
+                          </span>                        
+                        <ng-template #elseSBlock>
+                        <a class="btn btn-primary" (click)="providerdocstatus(r.id,{Status : 'verified'})">Approve</a>
+                        </ng-template>
+                          </td>
+                          <td> <a (click)="providerdocstatus(r.id,{Value : r.Value })" class="btn btn-primary">Save</a>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <div id="menu3" class="tab-pane fade text_box">
+                <div class="col-md-6">
+                  <input type="text" placeholder="Name" id="name" name="name" required="">
+                </div>
+                <div class="col-md-6">
+                  <input type="text" placeholder="Name" id="name" name="name" required="">
+                </div>
+                <div class="col-md-6">
+                  <input type="text" placeholder="Name" id="name" name="name" required="">
+                </div>
+                <div class="col-md-6">
+                  <input type="text" placeholder="Name" id="name" name="name" required="">
+                </div>
+              </div>
+              <div id="menu4" class="tab-pane fade text_box">
+                <div class="col-md-6">
+                  <input type="text" placeholder="Name" id="name" name="name" required="">
+                </div>
+                <div class="col-md-6">
+                  <input type="text" placeholder="Name" id="name" name="name" required="">
+                </div>
+                <div class="col-md-6">
+                  <input type="text" placeholder="Name" id="name" name="name" required="">
+                </div>
+                <div class="col-md-6">
+                  <input type="text" placeholder="Name" id="name" name="name" required="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

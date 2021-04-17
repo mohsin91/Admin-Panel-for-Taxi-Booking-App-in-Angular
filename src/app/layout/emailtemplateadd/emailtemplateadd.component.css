@@ -1,0 +1,18 @@
+.ttextarea {
+    height: 50em;
+    width: 35em;
+        background: #fff;
+            border: 0;
+            padding: 15px;
+}
+.text_editor {
+    width: 100%;
+    background: #f1f1f1;
+    float: right;
+    padding: 25px;
+    margin-top: 30px;
+}
+
+textarea.form-control {
+height: 400px;
+}

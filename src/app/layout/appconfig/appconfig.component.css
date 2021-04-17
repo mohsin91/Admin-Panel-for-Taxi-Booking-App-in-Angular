@@ -1,0 +1,12 @@
+.nav>li>a {
+    display: inline;
+    cursor: pointer;
+}
+.btn,.primary {
+    border-color: #3472F7;
+    color: white;
+    background-color: #3472F7;
+}
+select {
+    color: black;
+}

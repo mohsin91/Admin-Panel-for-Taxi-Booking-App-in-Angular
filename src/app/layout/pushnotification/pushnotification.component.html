@@ -1,0 +1,168 @@
+<div class="content">
+  <div class="container-fluid">
+    <div class="row">
+      <h4 class="headings_txt">Push Notifications View</h4>
+    </div>
+    <div class="row">
+      <div class="common_button">
+        <div class="common_width">
+          <a href="" class="a_text">Enroute to Pickup (3)</a>
+        </div>
+        <div class="common_width">
+          <a href="" class="a_text">Reached Pickup (20)</a>
+        </div>
+        <div class="common_width">
+          <a href="" class="a_text">Journey Started (1)</a>
+        </div>
+        <div class="common_width">
+          <a href="" class="a_text">Available</a>
+        </div>
+        <div class="common_width">
+          <a href="" class="a_text bg_yellow">All (29)</a>
+        </div>
+      </div>
+    </div>
+    <div class="">
+      <div class="col-md-6">
+        <div class="inner_left">
+          <h5>All</h5>
+          <div class="second_space">
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card full_bg">
+                <div class="our_miss" id="nscroll">
+                  <ul class="nasv nav-pills">
+                    <li class="active full_div"><a (click)="pushusersView(page , 'user')" data-toggle="pill"
+                        href="#home"><span>User</span> </a></li>
+                    <li class="full_div"><a (click)="pushprovidersView(page , 'provider')" data-toggle="pill"
+                        href="#menu2"><span>Provider</span> </a></li>
+                  </ul>
+                  <div class="tab-content">
+                    
+                    <div id="home" class="tab-pane fade active in text_box user_scroll" detect-scroll
+                      (onScroll)="handleScroll($event , 'user', 1)">
+                        <div class="checkbox">
+                          <label>
+                            <input type="checkbox" value="" [(ngModel)]="masterSelected" (change)="checkUncheckAll()">
+                            <span class="cr"><i class="cr-icon fas fa-check"></i></span>
+                            Select All
+                          </label>
+                        </div>
+                      <div class="second_spac" *ngFor="let r of result; let i = index">
+                        <div class="members">
+                          <div class="checkbox check_pos">
+                            <label>
+                              <input type="checkbox" [(ngModel)]="r.isSelected" value="" (change)="isAllSelected()">
+                              <span class="cr"><i class="cr-icon fas fa-check"></i></span>
+                          
+                            </label>
+                          </div>
+                          <span class="tes-img" *ngIf="r.Image != 'NULL' && r.Image != null && r.Image != ''; else imageelseBlock">
+                            <img src="{{r.Image}}" alt="user face" width="50" height="50">
+                          </span>
+                          <ng-template #imageelseBlock>
+                            <span class="tes-img">
+                              <img src="assets/img/faces/face-0.jpg" alt="user face" />
+                            </span>
+                          </ng-template>
+                          <div class="right_pad">
+                            <p class="hide_num">{{r.Mobile}}</p>
+                            <p class="mem_name">{{r.FirstName}} {{r.LastName}}</p>
+                          </div>
+                        </div>
+                         
+                      </div>
+                      <!-- <ngb-pagination [collectionSize]="pages" [(page)]="page" [maxSize]="5"
+                (pageChange)="getCancellationPolicyView('user',$event)" [rotate]="true" [boundaryLinks]="true">
+              </ngb-pagination> -->
+                    </div>
+                    <div id="menu2" class="tab-pane fade text_box provider_scroll" detect-scroll
+                      (onScroll)="handleScroll($event , 'provider', 1)">
+                        <div class="checkbox">
+                          <label>
+                            <input type="checkbox" value="" [(ngModel)]="masterSelected" (change)="checkUncheckAll()">
+                            <span class="cr"><i class="cr-icon fas fa-check"></i></span>
+                            Select All
+                          </label>
+                        </div>
+                      <div class="second_spac" *ngFor="let r of result; let i = index">                      
+                        <div class="members">
+                          <div class="checkbox check_pos">
+                            <label>
+                              <input type="checkbox" [(ngModel)]="r.isSelected" value="" (change)="isAllSelected()">
+                              <span class="cr"><i class="cr-icon fas fa-check"></i></span>
+                          
+                            </label>
+                          </div>
+                          <span class="tes-img" *ngIf="r.Image != 'NULL' && r.Image != ''; else imagepelseBlock">
+                            <img src="{{r.Image}}" alt="user face" width="50" height="50">
+                          </span>
+                          <ng-template #imagepelseBlock>
+                            <span class="tes-img">
+                              <img src="assets/img/faces/face-0.jpg" alt="user face" />
+                            </span>
+                          </ng-template>
+                          <div class="right_pad">
+                            <p class="hide_num">{{r.Mobile}}</p>
+                            <p class="mem_name">{{r.FirstName}} {{r.LastName}}</p>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- <ngb-pagination [collectionSize]="pages" [(page)]="page" [maxSize]="5"
+                (pageChange)="getCancellationPolicyView('provider',$event)" [rotate]="true" [boundaryLinks]="true">
+              </ngb-pagination> -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <span class="search_span">
+
+            <div class="navbar-right">
+              <div class="search-form" role="search">
+                <div class="form-group pull-right" id="search">
+                  <input type="text" class="form-control" [(ngModel)]="searchdata" (keyup)='findname(searchdata)' placeholder="Search">
+                  <button type="submit" (click)='findname(searchdata)' class="form-control form-control-submit">Submit</button>
+                  <span class="search-label"><i class="fas fa-search"></i></span>
+                </div>
+              </div>
+            </div>
+          </span>
+        </div>
+
+      </div>
+      <div class="col-md-6">
+        <div class="inner_left">
+          <h5>Push Message <span class="refresh_button"><a href="">Refresh</a></span></h5>
+          <div class="col-md">
+            <div class="box-shadow">
+              <div class="form-group1">
+                <label class="input_label">Title</label>
+                <input class="form-control1" type="text" [(ngModel)]="title" placeholder="Title...">
+              </div>
+              <div class="form-group1">
+                <label class="input_label">Body</label>
+                <input class="form-control1" type="text" placeholder="Body..." [(ngModel)]="body">
+              </div>
+              <div class="form-group1">
+                <label for="htmlcontent" class="input_label">Message</label>
+                <textarea class="form-control1" id="htmlcontent" [(ngModel)]="message" placeholder="" autocomplete="off" wrap="logical"
+                  spellcheck="false">
+                      </textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+<br>
+<div class="text-center">
+  <button type="submit" (click)="pushnotificationAdd()" [disabled]="!title || !body || !message"
+   class="btn btn-primary waves-effect waves-light">Save</button>
+</div>

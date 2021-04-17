@@ -1,0 +1,110 @@
+<div class="container card">
+    <h4 class="headings_txt">Ride Vehicle Type Add</h4>
+      <div class="content">
+        <form [formGroup]="ridevtypeAddForm" autocomplete="off" enctype="multipart/form-data">
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputEmail4">Vehicle Name</label>
+                <input type="text" class="form-control" formControlName="Name" id="inputEmail4" placeholder="Vehicle Name">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputEmail4">Country Name</label>             
+                <select formControlName="CountryId" class="form-control" (change)="changecountryid(ridevtypeAddForm.value.CountryId)">
+                  <option  value="" disabled selected>select a Country </option>
+                  <option *ngFor="let c of countrylist; let i=index; let odd=odd;" value="{{ c.Id }}">{{c.CountryName}}</option>
+                </select>  
+              </div>
+            </div>
+            
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                  <label for="exampleFormControlFile1">Passive Icon</label>             
+                <input type="file" class="form-control-file" accept="image/*" id="exampleFormControlFile1" #passiveimg>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="exampleFormControlFile1">Active Icon</label>             
+              <input type="file" class="form-control-file" accept="image/*" id="exampleFormControlFile1" #activeimg>
+          </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputEmail4">State Name</label>             
+                    <ng-multiselect-dropdown
+                    formControlName="StateIds"
+                    [placeholder]="'Select a State '"
+                    [data]="sdropdownList"              
+                    [settings]="sdropdownSettings"
+                  >
+                  </ng-multiselect-dropdown> 
+                  </div>
+                <div class="form-group col-md-6">
+                  <label for="inputEmail4">City Name</label>             
+                  <ng-multiselect-dropdown
+                  [placeholder]="'Select a City '"
+                  formControlName="CityIds"
+                  [data]="cdropdownList"              
+                  [settings]="cdropdownSettings"
+                >
+                </ng-multiselect-dropdown> 
+                </div>
+              </div>                                     
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputEmail4">Base Charge</label>
+                <input type="number" class="form-control" formControlName="BaseCharge" id="inputEmail4" placeholder="Base Charge">
+              </div>
+              <div class="form-group col-md-6">
+                  <label for="inputEmail4">Price Per(KM)</label>
+                  <input type="number" class="form-control" formControlName="MinCharge" id="inputEmail4" placeholder="Price Per(KM)">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="inputEmail4">Currency Type</label>
+                  <input type="text" class="form-control" formControlName="CurrencyType" id="inputEmail4" placeholder="Currency Type" value="{{ this.CurrencyTypeValue }}">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputEmail4">Commission Percentage</label>
+                    <input type="number" class="form-control" formControlName="CommissionPercentage" id="inputEmail4" placeholder="Commission Percentage">
+                  </div>
+              </div>          
+              <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="inputEmail4">Waiting Charge</label>
+                    <input type="number" class="form-control" formControlName="WaitingCharge" id="inputEmail4" placeholder="Waiting Charge">
+                  </div>
+                  <div class="form-group col-md-6">
+                      <label for="inputEmail4">Capacity</label>
+                      <input type="number" class="form-control" formControlName="Capacity" id="inputEmail4" placeholder="Car Capacity">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="inputEmail4">Short Description</label>
+                      <input type="text" class="form-control" formControlName="ShortDesc" id="inputEmail4" placeholder="Short Description">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputEmail4">Long Description</label>
+                        <input type="text" class="form-control" formControlName="LongDesc" id="inputEmail4" placeholder="Long Description">
+                      </div>
+                  </div> 
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                      <label for="Status">Status</label>
+                      <div>
+                        <label class="switch">
+                          <input type="checkbox" formControlName="IsActive">
+                          <span class="slider"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+            <div class="form-row">
+                <div class="form-group col-md-6 pull-right">
+                    <!-- [disabled]="!ridevtypeAddForm.valid" -->
+                    <button type="submit" (click)="ridevehicletypeAdd()" [disabled]="!ridevtypeAddForm.valid"  class="btn btn-primary waves-effect waves-light">Save</button>
+                  </div>    
+            </div>
+          </form>
+        </div>
+    </div>

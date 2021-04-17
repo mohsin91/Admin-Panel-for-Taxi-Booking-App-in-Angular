@@ -1,0 +1,62 @@
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <h4 class="headings_txt">User Account Detail</h4>
+        </div>
+        <div class="card">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card full_bg">
+                        <div class="our_miss">
+                            <ul class="nasv nav-pills">
+                                <li class="full_div" [class.active]="selectedType == type.key" *ngFor="let type of allAccounts"><a data-toggle="pill" [href]="'#'+type.key" (click)="selectedType = type.key"><span>{{type.display_name}}</span> </a></li>
+                            </ul>
+                            <div class="tab-content">
+                                <div [id]="type.key" class="tab-pane fade text_box" [class.active]="selectedType == type.key" [class.in]="selectedType == type.key" *ngFor="let type of allAccounts;">
+                                    <div class="table-responsive">
+                                        <div class="col-md-12">
+                                            <div class="card">
+                                                <h3 class="h3style"></h3>
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        <div class="img" style="margin-bottom: 64px;">
+                                                            <div *ngIf="pImage != 'NULL' && pImage != null && pImage != ''; else imageelseBlock1">
+                                                                <img class="tes-img" [src]="pImage" alt="Provider face" onerror="this.onerror=null;this.src='assets/img/user.png';">
+                                                            </div>
+                                                            <ng-template #imageelseBlock1>
+                                                                <div>
+                                                                    <img class="tes-img" src="{{imgpath}}" onerror="this.onerror=null;this.src='assets/img/user.png';" alt="provider face">
+                                                                </div>
+                                                            </ng-template>
+                                                        </div>
+                                                        <h3 style="font-weight: bold;">Address</h3>
+                                                        <agm-map [latitude]='latitude' [longitude]='longitude' 
+                                                            [mapTypeId]='mapType'  [mapTypeControl]="true" >
+                                                            <agm-marker [latitude]="latitude" [longitude]="longitude" [iconUrl] ='{"url": imgpath,"scaledSize": {"height": 40, "width": 40}}'></agm-marker>
+                                                          </agm-map>
+                                                    </div>
+                                                    <div class="col-md-7">
+                                                        <div class="row" *ngFor="let kvPair of type.data | keyvalue">
+                                                            <p *ngIf="(kvPair.value|typeof) != 'object'; else kvpairElseBlock;">
+                                                                <strong>{{kvPair.key}}</strong> : {{ displayValue(kvPair.value) }}
+                                                            </p>
+                                                            <ng-template #kvpairElseBlock>
+                                                                <strong>{{kvPair.key}}</strong>
+                                                                <pre>{{ displayValue(kvPair.value) }}</pre>
+                                                            </ng-template>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

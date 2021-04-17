@@ -1,0 +1,100 @@
+<div class="content">
+  <div class="container-fluid">
+    <div class="row">
+      <h4 class="headings_txt">Banner Advertisement</h4>
+    </div>
+    <div class="row">
+      <div class="col-md-9">
+        <ul class="drop_ul">
+          <li>
+            <div class="dropdown">
+              <button class="btn btn-primary dropdown-toggle btn_color btn_pad" id="menu1" type="button"
+                data-toggle="dropdown">All
+                <span class="caret"></span></button>
+              <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                <!-- <li role="presentation"><a role="menuitem" tabindex="-1" href="#">HTML</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">CSS</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">JavaScript</a></li> -->
+              </ul>
+            </div>
+          </li>
+
+          <li class="icon_pos">
+            <form class="mailchimp subscribe-form" action="" novalidate="true">
+              <input type="email" name="EMAIL" id="subscriber-email" placeholder="Search">
+              <button type="submit" id="subscribe-button" class="tm-btn"><span>Search</span></button>
+            </form>
+          </li>
+          <li>
+            <a href="" class="reset_btn">RESET</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <div class="text-right">
+          <a routerLink="/banneradsAdd" class="add_btn">ADD</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="row second_row">
+      <!-- <div class="col-md-6">
+        <div class="inner_btn">
+          <a href="">Select Action</a>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="text-right export_btn">
+          <a href="">Export</a>
+        </div>
+      </div> -->
+    </div>
+    <div class="card">
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">S.No</th>
+              <th scope="col">Title</th>
+              <th scope="col">Description</th>
+              <th scope="col">Banner Image</th>
+              <th scope="col">Url</th>
+              <th scope="col">Status</th>
+              <th scope="col">Edit</th>
+              <!-- <th scope="col">IsActive</th> -->
+            </tr>
+          </thead>
+          <tbody>
+                <tr *ngFor="let r of result; let i = index">
+                  <th scope="row">{{((page * 10 ) + ( i + 1)) - 10}}</th>
+                  <td>{{r.Title}}</td>
+                  <td>{{r.Description}}</td>
+                  <td>
+                    <span class="tes-img" *ngIf="r.Image_path != 'NULL' && r.Image_path != null && r.Image_path != ''; else imageelseBlock">
+                      <img [src]="r.Image_path" alt="User face" onerror="this.onerror=null;this.src='assets/img/user.png';">
+                    </span>
+                    <ng-template #imageelseBlock>
+                      <span class="tes-img">
+                        <img src="assets/img/user.png" alt="User face" height="50" width="50">
+                      </span>
+                    </ng-template>
+                  </td>
+                  <td>{{r.Url}}</td>
+                  <td>
+                      <div class="switch-margin">
+                        <label class="switch">
+                          <input type="checkbox" [(ngModel)]="r.Status" (change)="changeStatus(r.Id, r.Status)">
+                          <span class="slider"></span>
+                        </label>
+                      </div>
+                  </td>
+                  <td><a [routerLink]="['/banneradsEdit', r.Id]" class="btn btn-primary">Edit</a>
+                </tr>
+          </tbody>
+        </table>
+      </div>
+    
+    </div>
+  </div>
+</div>
+

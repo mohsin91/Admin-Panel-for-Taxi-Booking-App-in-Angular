@@ -1,0 +1,316 @@
+<div class="content">
+  <div class="container-fluid">
+      <div class="row">
+          <h4 style="font-weight: bold;color: black;margin: 15px 15px;font-family: Avenir Heavy;">Dashboard</h4>
+      </div>
+  <div class="row">
+          <div class="col-md-6">
+              <div class="card">
+                  <div class="header">
+                      <h5 class="title">Booking statistics</h5>                                
+                  </div>
+                  <div class="content">                       
+                      <div class="row">
+                          <div class="col-md-4 col-rider">
+                              <div class="card-riders">
+                                  <div class="content">
+                                       <img src="assets/img/taxiico/Artboard33.png" alt="img-riders"> 
+                                       <div class="text-first">
+                                       <span>{{users}}</span>
+                                       </div>
+                                       <div class="text-second">
+                                       <span>Users</span>
+                                       </div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-md-4 col-driver">
+                              <div class="card-drivers">
+                                  <div class="content">
+                                       <img src="assets/img/taxiico/Artboard34.png" alt="img-riders"> 
+                                       <div class="text-first">
+                                       <span>{{providers}}</span>
+                                       </div>
+                                       <div class="text-second">
+                                       <span>Drivers</span>
+                                       </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class="col-md-4 col-company">
+                              <div class="card-companies">
+                                  <div class="content">
+                                       <img src="assets/img/taxiico/Artboard35.png" alt="img-riders"> 
+                                       <div class="text-first">
+                                       <span>{{ridevehicle}}</span>
+                                       </div>
+                                       <div class="text-second">
+                                       <span>Services</span>
+                                       </div>
+                                  </div>                                            
+                              </div>
+                          </div>
+                          <div class="col-md-4 col-total">
+                              <div class="card-total-earnings">
+                                  <div class="content">
+                                       <img src="assets/img/taxiico/Artboard36.png" alt="img-riders"> 
+                                       <div class="text-first">
+                                       <span>{{booking}}</span>
+                                       </div>
+                                       <div class="text-second">
+                                       <span>Total Bookings</span>
+                                       </div>
+                                  </div>                                            
+                              </div>
+                          </div>
+                      </div>
+              </div>
+          </div>
+          </div>
+<!-- end -->
+          <div class="col-md-6">
+              <div class="card ">
+                  <div class="header">
+                      <h5 class="title">Earning statistics</h5>                                
+                  </div>
+                  <div class="content">
+                      <div class="row">
+                          <div class="col-md-4 col-rider">
+                              <div class="card-total-rides">
+                                  <div class="content">
+                                       <img src="assets/img/taxiico/Artboard33.png" alt="img-riders"> 
+                                       <div class="text-first">
+                                       <span>{{dayearning}}</span>
+                                       </div>
+                                       <div class="text-second">
+                                       <span>Today</span>
+                                       </div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-md-4 col-driver">
+                              <div class="card-ongoing">
+                                  <div class="content">
+                                       <img src="assets/img/taxiico/Artboard34.png" alt="img-riders"> 
+                                       <div class="text-first">
+                                       <span>{{weekearning}}</span>
+                                       </div>
+                                       <div class="text-second">
+                                       <span>This Week</span>
+                                       </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class="col-md-4 col-company">
+                              <div class="card-cancel-rides">
+                                  <div class="content">
+                                       <img src="assets/img/taxiico/Artboard37.png" alt="img-riders"> 
+                                       <div class="text-first">
+                                       <span>{{monthearning}}</span>
+                                       </div>
+                                       <div class="text-second">
+                                       <span>This Month</span>
+                                       </div>
+                                  </div>                                            
+                              </div>
+                          </div>
+                          <div class="col-md-4 col-total">
+                              <div class="card-completed-rides">
+                                  <div class="content">
+                                       <img src="assets/img/taxiico/Artboard38.png" alt="img-riders"> 
+                                       <div class="text-first">
+                                       <span>{{yearearning}}</span>
+                                       </div>
+                                       <div class="text-second">
+                                       <span>This Year</span>
+                                       </div>
+                                  </div>                                            
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          </div>
+  
+      <div class="row">
+          <div class="col-md-6">
+                    <div class="card">
+                  <div class="header">
+                      <h4 class="title">Rides</h4>                                
+                  </div>
+                  <div class="content">                        
+                      <div id="" class="ct-chart-donut rider-chart"><svg xmlns:ct="http://gionkunz.github.com/chartist-js/ct" width="100%" height="100%" class="ct-chart-donut" style="width: 100%; height: 100%;"><g class="ct-series ct-series-a"><path d="M354.928,178.75A112.5,112.5,0,0,0,257.5,10" class="ct-slice-donut" ct:value="30" style="stroke-width: 10px;" stroke-dasharray="235.6226806640625px 235.6226806640625px" stroke-dashoffset="-235.6226806640625px"><animate attributeName="stroke-dashoffset" id="anim0" dur="1000ms" from="-235.6226806640625px" to="0px" fill="freeze" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g><g class="ct-series ct-series-b"><path d="M160.072,178.75A112.5,112.5,0,0,0,355.124,178.41" class="ct-slice-donut" ct:value="30" style="stroke-width: 10px;" stroke-dasharray="236.0162353515625px 236.0162353515625px" stroke-dashoffset="-236.0162353515625px"><animate attributeName="stroke-dashoffset" id="anim1" dur="1000ms" from="-236.0162353515625px" to="0px" fill="freeze" begin="anim0.end" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g><g class="ct-series ct-series-c"><path d="M257.5,10A112.5,112.5,0,0,0,160.269,179.09" class="ct-slice-donut" ct:value="30" style="stroke-width: 10px;" stroke-dasharray="236.0157928466797px 236.0157928466797px" stroke-dashoffset="-236.0157928466797px"><animate attributeName="stroke-dashoffset" id="anim2" dur="1000ms" from="-236.0157928466797px" to="0px" fill="freeze" begin="anim1.end" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g></svg></div>
+                      <div class="footer">
+                      <h4 class="title-rc">Rides Count : <strong>91</strong></h4>
+                          <div class="legend">
+                          <div class="row"><i class="fa fa-square text-info"></i> <span class="span">Today : <strong>23</strong></span></div><br>
+                          <div class="row"><i class="fa fa-square text-danger"></i> <span class="span">This month : <strong>90</strong></span></div><br>
+                          <div class="row"><i class="fa fa-square text-warning"></i> <span class="span">This year : <strong>234</strong></span></div>
+                          </div>
+                          <hr>
+                          <div class="stats">
+                              <i class="fa fa-star"></i>This is count for all riders (Finished, ongoing, cancelled)
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <div class="col-md-6">
+              <div class="card ">
+                  <div class="header">
+                      <h4 class="title">Drivers</h4>                                
+                  </div>
+                  <div class="content">
+                      <div id="" class="ct-chart-donut driver-chart">
+                      <svg xmlns:ct="http://gionkunz.github.com/chartist-js/ct" width="100%" height="100%" class="ct-chart-donut" style="width: 100%; height: 100%;"><g class="ct-series ct-series-a"><path d="M354.928,178.75A112.5,112.5,0,0,0,257.5,10" class="ct-slice-donut" ct:value="30" style="stroke-width: 10px;" stroke-dasharray="235.6226806640625px 235.6226806640625px" stroke-dashoffset="-235.6226806640625px"><animate attributeName="stroke-dashoffset" id="anim0" dur="1000ms" from="-235.6226806640625px" to="0px" fill="freeze" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g><g class="ct-series ct-series-b"><path d="M160.072,178.75A112.5,112.5,0,0,0,355.124,178.41" class="ct-slice-donut" ct:value="30" style="stroke-width: 10px;" stroke-dasharray="236.0162353515625px 236.0162353515625px" stroke-dashoffset="-236.0162353515625px"><animate attributeName="stroke-dashoffset" id="anim1" dur="1000ms" from="-236.0162353515625px" to="0px" fill="freeze" begin="anim0.end" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g><g class="ct-series ct-series-c"><path d="M257.5,10A112.5,112.5,0,0,0,160.269,179.09" class="ct-slice-donut" ct:value="30" style="stroke-width: 10px;" stroke-dasharray="236.0157928466797px 236.0157928466797px" stroke-dashoffset="-236.0157928466797px"><animate attributeName="stroke-dashoffset" id="anim2" dur="1000ms" from="-236.0157928466797px" to="0px" fill="freeze" begin="anim1.end" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g></svg></div>
+                      <div class="footer">
+                           <div class="row">
+                              <h5 style="margin: 0;color: #000000;font-weight: 700;font-size: 25px;">Completed</h5>
+                             <i style="color: #93F277;font-size: 2em" class="fa fa-sort-up"></i> <span style="color: #525174;font-size: 20px;">57.12% (52)</span>
+                          </div>
+                      <h4 class="title-rc">Drivers Count : <strong>91</strong></h4>
+                          <div class="legend">
+                          <div class="row"><i class="fa fa-square text-info"></i> <span class="span">Today : <strong>9</strong></span></div><br>
+                          <div class="row"><i class="fa fa-square text-danger"></i> <span class="span">This month : <strong>53</strong></span></div><br>
+                          <div class="row"><i class="fa fa-square text-warning"></i> <span class="span">This year : <strong>66</strong></span></div>
+                          <hr>
+                          <div class="stats">
+                              <i class="fa fa-star"></i>This is count for all riders (Finished, ongoing, cancelled)
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+      <div class="row">
+          <div class="col-md-6">
+                                  <div class="card">
+                  <div class="header">
+                      <h4 class="title">Latest Rides</h4>                                
+                  </div>
+                  <div class="content">                        
+                      <div class="row">
+                          <div class="col-md-3">
+                              <img src="assets/img/taxiico/Artboard33.png">
+                          </div>
+                          <div class="col-md-9">
+                              <h5 class="title">Joe P. Tolson</h5>
+                              <p class="category">2 min ago</p>
+                              <p style="color: #525174;font-size: 12px;">25 Gas Light Ln, North Easton, MA 02356, USA —&gt; 25 Gas Light Ln, North Easton, MA 02356, USA</p>
+                               <div class="footer">
+                               <p style="color: #707070;">Status:<span style="color: #8FC93A;font-size: 15px;"> Finished</span></p>
+                              </div>
+                          </div>
+                      </div>
+                      <hr>
+                      <div class="row">
+                          <div class="col-md-3">
+                              <img src="assets/img/taxiico/Artboard33.png">
+                          </div>
+                          <div class="col-md-9">
+                              <h5 class="title">Joe P. Tolson</h5>
+                              <p class="category">2 min ago</p>
+                              <p style="color: #525174;font-size: 12px;">25 Gas Light Ln, North Easton, MA 02356, USA —&gt; 25 Gas Light Ln, North Easton, MA 02356, USA</p>
+                               <div class="footer">
+                               <p style="color: #707070;">Status:<span style="color: #8FC93A;font-size: 15px;"> Finished</span></p>
+                              </div>
+                          </div>                                    
+                      </div>
+                      <hr>
+                      <div class="row">
+                          <div class="col-md-3">
+                              <img src="assets/img/taxiico/Artboard33.png">
+                          </div>
+                          <div class="col-md-9">
+                              <h5 class="title">Joe P. Tolson</h5>
+                              <p class="category">2 min ago</p>
+                              <p style="color: #525174;font-size: 12px;">25 Gas Light Ln, North Easton, MA 02356, USA —&gt; 25 Gas Light Ln, North Easton, MA 02356, USA</p>
+                               <div class="footer">
+                               <p style="color: #707070;">Status:<span style="color: #8FC93A;font-size: 15px;"> Finished</span></p>
+                              </div>
+                          </div>                                    
+                      </div>
+                      <hr>
+                      <div class="footer">
+                  </div>
+              </div>
+          </div>
+          </div>
+
+          <div class="col-md-6">
+              <div class="card ">
+                  <div class="header">
+                      <h4 class="title">Notification Alerts Panel</h4>                                
+                  </div>
+                  <div class="content">
+                      <div class="row">
+                          <div class="col-md-12">
+                              <h5 class="title"><strong>Insurance</strong> <span style="color: #9A9A9A!important;"></span> uploaded by driver: <strong style="color: #0076FF;">Joe P. Tolson</strong></h5>
+                              <p class="category">2 min ago</p>
+                          </div>                                    
+                      </div>
+                      <hr>    
+                      <div class="row">
+                          <div class="col-md-12">
+                              <h5 class="title"><strong>Insurance</strong> <span style="color: #9A9A9A!important;"></span> uploaded by driver: <strong style="color: #0076FF;">Joe P. Tolson</strong></h5>
+                              <p class="category">2 min ago</p>
+                          </div>                                    
+                      </div>
+                      <hr>  
+                      <div class="row">
+                          <div class="col-md-12">
+                              <h5 class="title"><strong>Insurance</strong> <span style="color: #9A9A9A!important;"></span> uploaded by driver: <strong style="color: #0076FF;">Joe P. Tolson</strong></h5>
+                              <p class="category">2 min ago</p>
+                          </div>                                    
+                      </div>
+                      <hr>                                                                                              
+                      <div class="footer">
+
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>            
+</div>
+
+
+<!--         <footer class="footer">
+  <div class="container-fluid">
+      <nav class="pull-left">
+          <ul>
+              <li>
+                  <a href="#">
+                      Home
+                  </a>
+              </li>
+              <li>
+                  <a href="#">
+                      Company
+                  </a>
+              </li>
+              <li>
+                  <a href="#">
+                      Portfolio
+                  </a>
+              </li>
+              <li>
+                  <a href="#">
+                     Blog
+                  </a>
+              </li>
+          </ul>
+      </nav>
+      <p class="copyright pull-right">
+          &copy; <script>document.write(new Date().getFullYear())</script> <a href="http://www.creative-tim.com">Creative Tim</a>, made with love for a better web
+      </p>
+  </div>
+</footer> -->
+
+</div>
